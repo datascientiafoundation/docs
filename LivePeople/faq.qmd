@@ -85,7 +85,7 @@ No, the research entity that requested the data deletes it at the end date speci
 
 ## 3. Data upload and custom catalog
 
-You can upload your [metadata values](({{ site.baseurl }}/metadata)) and/or your data to our catalog. 
+You can upload your [metadata values](metadata.qmd) and/or your data to our catalog. 
 
 
 ### Why should I create my catalog?
