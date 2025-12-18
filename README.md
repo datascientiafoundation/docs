@@ -14,3 +14,5 @@ To render it as HTML website
 ```bash
 quarto render
 ```
+
+To build the website and make the changes public, just push the changes to this repository.
