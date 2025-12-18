@@ -2,34 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://datascientiafoundation.github.io/docs/LivePeople/papers/diversityone.html</loc>
-    <lastmod>2025-12-18T16:43:00.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://datascientiafoundation.github.io/docs/LivePeople/catalog.html</loc>
-    <lastmod>2025-12-18T16:43:00.689Z</lastmod>
-  </url>
-  <url>
-    <loc>https://datascientiafoundation.github.io/docs/LivePeople/metadata.html</loc>
-    <lastmod>2025-12-18T16:43:00.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://datascientiafoundation.github.io/docs/LivePeople/intro.html</loc>
-    <lastmod>2025-12-18T16:43:00.689Z</lastmod>
-  </url>
-  <url>
-    <loc>https://datascientiafoundation.github.io/docs/index.html</loc>
-    <lastmod>2025-12-18T16:43:00.691Z</lastmod>
-  </url>
-  <url>
-    <loc>https://datascientiafoundation.github.io/docs/LivePeople/faq.html</loc>
-    <lastmod>2025-12-18T16:43:00.689Z</lastmod>
-  </url>
-  <url>
-    <loc>https://datascientiafoundation.github.io/docs/LivePeople/tools.html</loc>
-    <lastmod>2025-12-18T16:43:00.691Z</lastmod>
+    <lastmod>2025-12-18T18:03:18.070Z</lastmod>
   </url>
   <url>
     <loc>https://datascientiafoundation.github.io/docs/LivePeople/data_preparation.html</loc>
-    <lastmod>2025-12-18T16:43:00.689Z</lastmod>
+    <lastmod>2025-12-18T18:03:18.070Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/tools.html</loc>
+    <lastmod>2025-12-18T18:03:18.071Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/faq.html</loc>
+    <lastmod>2025-12-18T18:03:18.070Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/sensors.html</loc>
+    <lastmod>2025-12-18T18:03:18.071Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/index.html</loc>
+    <lastmod>2025-12-18T18:03:18.071Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/intro.html</loc>
+    <lastmod>2025-12-18T18:03:18.070Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/metadata.html</loc>
+    <lastmod>2025-12-18T18:03:18.070Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/catalog.html</loc>
+    <lastmod>2025-12-18T18:03:18.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datascientiafoundation.github.io/docs/LivePeople/dataset.html</loc>
+    <lastmod>2025-12-18T18:03:18.070Z</lastmod>
   </url>
 </urlset>

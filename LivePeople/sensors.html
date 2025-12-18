@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Preparation – Datascientia Docs</title>
+<title>Sensor – Datascientia Docs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../LivePeople/dataset.html" rel="next">
+<link href="../LivePeople/tools.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -69,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -109,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Preparation</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../LivePeople/intro.html">LivePeople</a></li><li class="breadcrumb-item"><a href="../LivePeople/catalog.html">Data catalog</a></li><li class="breadcrumb-item"><a href="../LivePeople/sensors.html">Sensor</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,11 +179,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../LivePeople/catalog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data catalog</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../LivePeople/metadata.html" class="sidebar-item-text sidebar-link">
@@ -167,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../LivePeople/sensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../LivePeople/sensors.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Sensor</span></a>
   </div>
 </li>
@@ -192,15 +223,62 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#connectivity" id="toc-connectivity" class="nav-link active" data-scroll-target="#connectivity">Connectivity</a>
+  <ul class="collapse">
+  <li><a href="#bluetooth" id="toc-bluetooth" class="nav-link" data-scroll-target="#bluetooth">Bluetooth</a></li>
+  <li><a href="#cellular-network" id="toc-cellular-network" class="nav-link" data-scroll-target="#cellular-network">Cellular Network</a></li>
+  <li><a href="#wifi-event" id="toc-wifi-event" class="nav-link" data-scroll-target="#wifi-event">WiFi Event</a></li>
+  <li><a href="#wifi-networks-event" id="toc-wifi-networks-event" class="nav-link" data-scroll-target="#wifi-networks-event">WiFi Networks Event</a></li>
+  </ul></li>
+  <li><a href="#motion" id="toc-motion" class="nav-link" data-scroll-target="#motion">Motion</a>
+  <ul class="collapse">
+  <li><a href="#accelerometer" id="toc-accelerometer" class="nav-link" data-scroll-target="#accelerometer">Accelerometer</a></li>
+  <li><a href="#gyroscope" id="toc-gyroscope" class="nav-link" data-scroll-target="#gyroscope">Gyroscope</a></li>
+  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
+  <li><a href="#step-counter" id="toc-step-counter" class="nav-link" data-scroll-target="#step-counter">Step Counter</a></li>
+  <li><a href="#step-detector" id="toc-step-detector" class="nav-link" data-scroll-target="#step-detector">Step Detector</a></li>
+  </ul></li>
+  <li><a href="#position" id="toc-position" class="nav-link" data-scroll-target="#position">Position</a>
+  <ul class="collapse">
+  <li><a href="#location" id="toc-location" class="nav-link" data-scroll-target="#location">Location</a></li>
+  <li><a href="#magnetic-field" id="toc-magnetic-field" class="nav-link" data-scroll-target="#magnetic-field">Magnetic field</a></li>
+  <li><a href="#proximity" id="toc-proximity" class="nav-link" data-scroll-target="#proximity">Proximity</a></li>
+  <li><a href="#app-usage" id="toc-app-usage" class="nav-link" data-scroll-target="#app-usage">App Usage</a></li>
+  <li><a href="#headset-status" id="toc-headset-status" class="nav-link" data-scroll-target="#headset-status">Headset status</a></li>
+  <li><a href="#music-playback" id="toc-music-playback" class="nav-link" data-scroll-target="#music-playback">Music Playback</a></li>
+  <li><a href="#notifications" id="toc-notifications" class="nav-link" data-scroll-target="#notifications">Notifications</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
+  </ul></li>
+  <li><a href="#device-usage" id="toc-device-usage" class="nav-link" data-scroll-target="#device-usage">Device Usage</a>
+  <ul class="collapse">
+  <li><a href="#airplane-mode" id="toc-airplane-mode" class="nav-link" data-scroll-target="#airplane-mode">Airplane Mode</a></li>
+  <li><a href="#battery-charge" id="toc-battery-charge" class="nav-link" data-scroll-target="#battery-charge">Battery Charge</a></li>
+  <li><a href="#battery-monitoring-log" id="toc-battery-monitoring-log" class="nav-link" data-scroll-target="#battery-monitoring-log">Battery Monitoring Log</a></li>
+  <li><a href="#doze-mode" id="toc-doze-mode" class="nav-link" data-scroll-target="#doze-mode">Doze Mode</a></li>
+  <li><a href="#ring-mode" id="toc-ring-mode" class="nav-link" data-scroll-target="#ring-mode">Ring Mode</a></li>
+  <li><a href="#touch-event" id="toc-touch-event" class="nav-link" data-scroll-target="#touch-event">Touch event</a></li>
+  <li><a href="#screen-status" id="toc-screen-status" class="nav-link" data-scroll-target="#screen-status">Screen status</a></li>
+  <li><a href="#user-presence" id="toc-user-presence" class="nav-link" data-scroll-target="#user-presence">User Presence</a></li>
+  </ul></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a>
+  <ul class="collapse">
+  <li><a href="#light" id="toc-light" class="nav-link" data-scroll-target="#light">Light</a></li>
+  <li><a href="#pressure" id="toc-pressure" class="nav-link" data-scroll-target="#pressure">Pressure</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../LivePeople/intro.html">LivePeople</a></li><li class="breadcrumb-item"><a href="../LivePeople/catalog.html">Data catalog</a></li><li class="breadcrumb-item"><a href="../LivePeople/sensors.html">Sensor</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Data Preparation</h1>
+<h1 class="title">Sensor</h1>
 </div>
 
 
@@ -217,8 +295,202 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="connectivity" class="level2">
+<h2 class="anchored" data-anchor-id="connectivity">Connectivity</h2>
+<section id="bluetooth" class="level3">
+<h3 class="anchored" data-anchor-id="bluetooth">Bluetooth</h3>
+<p>List of discovered Bluetooth normal or low energy devices around the smartphone containing the following information:</p>
+<ul>
+<li><em>name</em>: user-friendly name of the remote device<br>
+</li>
+<li><em>address</em>: hardware MAC Address of the device<br>
+</li>
+<li><em>bondstate</em>: whether the remote device is connected<br>
+</li>
+<li><em>rssi</em>: Received Signal Strength Indicator<br>
+</li>
+<li><em>class code</em> and <em>class tag</em>: Bluetooth class of the device (e.g., phone or computer), and the class describes the characteristics and capabilities of the device (e.g., audio and telephony)</li>
+</ul>
+</section>
+<section id="cellular-network" class="level3">
+<h3 class="anchored" data-anchor-id="cellular-network">Cellular Network</h3>
+<p>Information of the cellular network to which the phone is connected to:</p>
+<ul>
+<li><em>cellid</em>: identifier of the cell<br>
+</li>
+<li><em>dbm</em>: signal strength<br>
+</li>
+<li><em>type</em>: type of the cell, possible values are lte, wcdma, gsm and cdma</li>
+</ul>
+</section>
+<section id="wifi-event" class="level3">
+<h3 class="anchored" data-anchor-id="wifi-event">WiFi Event</h3>
+<p>Returns information related to the WIFI network to which the phone is connected; if connected, it also reports the WIFI network ID. Additional features are:</p>
+<ul>
+<li><em>ssid</em>: (Service Set Identifier) ID or unique identifier of a digital network (Wi-Fi or WLAN)<br>
+</li>
+<li><em>bssid</em>: (Basic Service Set Identifier): sequence of characters that define a wireless computer network configured to communicate directly with each other<br>
+</li>
+<li><em>isconnected</em>: return whether the phone is connected to the WIFI</li>
+</ul>
+</section>
+<section id="wifi-networks-event" class="level3">
+<h3 class="anchored" data-anchor-id="wifi-networks-event">WiFi Networks Event</h3>
+<p>Returns all WIFI networks detected by the smartphone. Additional features are:</p>
+<ul>
+<li><em>address</em>: unique identifier assigned to a network interface controller for use as a network address in communications within a network segment<br>
+</li>
+<li><em>capabilities</em>: list of capabilities supported by the network, e.g., WPA and WPS<br>
+</li>
+<li><em>frequency</em>: the WiFi frequency bands include 2.4 GHz and 5 GHz<br>
+</li>
+<li><em>name</em>: the name assigned to the WiFi network<br>
+</li>
+<li><em>rssi</em>: Received Signal Strength Indicator is an estimated measure of signal strength that indicates how effectively a device can receive signals from any wireless access point or Wi-Fi router. It provides insight into the quality and reliability of the connection, often measured in decibels (dBm) to represent signal strength. The RSSI value range is between 0 and -100, where 0 signifies stronger and more stable connections.</li>
+</ul>
+</section>
+</section>
+<section id="motion" class="level2">
+<h2 class="anchored" data-anchor-id="motion">Motion</h2>
+<section id="accelerometer" class="level3">
+<h3 class="anchored" data-anchor-id="accelerometer">Accelerometer</h3>
+<p>Measures the acceleration to which the phone is subjected and captures it as a 3D vector. The unit is <span class="math inline">\(m/s^2\)</span>.</p>
+</section>
+<section id="gyroscope" class="level3">
+<h3 class="anchored" data-anchor-id="gyroscope">Gyroscope</h3>
+<p>Measures the rotational forces to which the phone is subjected and it captures it as a 3D vector. The unit is <span class="math inline">\(rad/s\)</span>.</p>
+</section>
+<section id="activities" class="level3">
+<h3 class="anchored" data-anchor-id="activities">Activities</h3>
+<p>It reports the user’s activity recognized by the Google Activity Recognition API. The recognized activities are <em>in vehicle</em>, <em>on bicycle</em>, <em>on foot</em>, <em>running</em>, <em>still</em>, <em>tilting</em>, <em>walking</em> and <em>unknown</em>. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.</p>
+</section>
+<section id="step-counter" class="level3">
+<h3 class="anchored" data-anchor-id="step-counter">Step Counter</h3>
+<p>It counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on.</p>
+</section>
+<section id="step-detector" class="level3">
+<h3 class="anchored" data-anchor-id="step-detector">Step Detector</h3>
+<p>An event is triggered each time the user takes a step.</p>
+</section>
+</section>
+<section id="position" class="level2">
+<h2 class="anchored" data-anchor-id="position">Position</h2>
+<section id="location" class="level3">
+<h3 class="anchored" data-anchor-id="location">Location</h3>
+<p>It provides the geographic coordinates of the phone:</p>
+<ul>
+<li><em>latitude</em>: latitude in degrees<br>
+</li>
+<li><em>longitude</em>: longitude in degrees<br>
+</li>
+<li><em>altitude</em>: the altitude in meters<br>
+</li>
+<li><em>accuracy</em>: estimated horizontal accuracy radius in meters<br>
+</li>
+<li><em>speed</em>: current speed of the phone in <span class="math inline">\(m/s\)</span><br>
+</li>
+<li><em>provider</em>: the source of the coordinates, i.e., GPS (hardware sensor in the devices), network (based on the WiFi network the phone is connected to) and passive (retrieve the location from other applications that already requested it)<br>
+</li>
+<li><em>bearing</em>: horizontal direction of travel and it’s the angle with respect to the north that is being faced</li>
+</ul>
+</section>
+<section id="magnetic-field" class="level3">
+<h3 class="anchored" data-anchor-id="magnetic-field">Magnetic field</h3>
+<p>Reports the ambient magnetic field along the three sensor axes at the phone location.</p>
+</section>
+<section id="proximity" class="level3">
+<h3 class="anchored" data-anchor-id="proximity">Proximity</h3>
+<p>Measures the distance between the user’s head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., ‘near’, ‘far’).</p>
+</section>
+<section id="app-usage" class="level3">
+<h3 class="anchored" data-anchor-id="app-usage">App Usage</h3>
+</section>
+<section id="headset-status" class="level3">
+<h3 class="anchored" data-anchor-id="headset-status">Headset status</h3>
+<p>Indicates whether the headphones are connected to the phone.</p>
+</section>
+<section id="music-playback" class="level3">
+<h3 class="anchored" data-anchor-id="music-playback">Music Playback</h3>
+<p>Returns whether music is being played on the phone using the default music player from the operating system. Track information is not collected.</p>
+</section>
+<section id="notifications" class="level3">
+<h3 class="anchored" data-anchor-id="notifications">Notifications</h3>
+<p>It generates an event every time the phone receives a notification and when it is dismissed by the user:</p>
+<ul>
+<li><em>identifier</em>: the unique identifier of notification within the application that generated it<br>
+</li>
+<li><em>isclearable</em>: whether the notification can be canceled when the user clears the notifications<br>
+</li>
+<li><em>isongoing</em>: the notification refers to an event that is ongoing, e.g., a phone call<br>
+</li>
+<li><em>package</em>: package name of the application<br>
+</li>
+<li><em>status</em>: whether the notification is posted or dismissed</li>
+</ul>
+</section>
+<section id="applications" class="level3">
+<h3 class="anchored" data-anchor-id="applications">Applications</h3>
+<p>Reports the name of the application (or application package) currently running in the foreground of the phone.</p>
+</section>
+</section>
+<section id="device-usage" class="level2">
+<h2 class="anchored" data-anchor-id="device-usage">Device Usage</h2>
+<section id="airplane-mode" class="level3">
+<h3 class="anchored" data-anchor-id="airplane-mode">Airplane Mode</h3>
+<p>Returns whether the phone’s airplane mode is on or off. When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It’s accessible through the quick settings menu on most devices.</p>
+</section>
+<section id="battery-charge" class="level3">
+<h3 class="anchored" data-anchor-id="battery-charge">Battery Charge</h3>
+<p>Returns whether the phone is on charge:</p>
+<ul>
+<li><em>source</em>: type of power source connected to the device; possible values are USB, AC charge, wireless power source or unknown<br>
+</li>
+<li><em>status</em>: whether the device is being charged</li>
+</ul>
+</section>
+<section id="battery-monitoring-log" class="level3">
+<h3 class="anchored" data-anchor-id="battery-monitoring-log">Battery Monitoring Log</h3>
+<p>Returns the phone’s battery level:</p>
+<ul>
+<li><em>level</em>: current battery level between 0 and 100<br>
+</li>
+<li><em>scale</em>: maximum level of the battery represented as a value between 0 and 100</li>
+</ul>
+</section>
+<section id="doze-mode" class="level3">
+<h3 class="anchored" data-anchor-id="doze-mode">Doze Mode</h3>
+<p>Returns whether the phone’s doze mode is on or off. Doze mode is a low-power state that a phone enters after a period of inactivity to conserve battery. In this mode, background processes and network access are restricted, allowing only essential tasks, such as high-priority notifications or alarms, to function periodically. This helps significantly reduce battery consumption while the device is idle.</p>
+</section>
+<section id="ring-mode" class="level3">
+<h3 class="anchored" data-anchor-id="ring-mode">Ring Mode</h3>
+<p>Reports the current ring status of the phone. When set to <em>normal</em>, the smartphone rings on incoming calls, messages and notifications by producing audible alerts. Other statuses are <em>vibrate</em> (where the phone vibrates instead of ringing) or <em>silent</em> (where all sounds are muted). Ring mode is often managed through the device’s sound settings.</p>
+</section>
+<section id="touch-event" class="level3">
+<h3 class="anchored" data-anchor-id="touch-event">Touch event</h3>
+<p>It generates an event each time the user touches the screen.</p>
+</section>
+<section id="screen-status" class="level3">
+<h3 class="anchored" data-anchor-id="screen-status">Screen status</h3>
+<p>Returns whether the phone’s screen is on or off.</p>
+</section>
+<section id="user-presence" class="level3">
+<h3 class="anchored" data-anchor-id="user-presence">User Presence</h3>
+<p>Detects when the user is present near the phone, for example, when the user unlocks the screen.</p>
+</section>
+</section>
+<section id="environment" class="level2">
+<h2 class="anchored" data-anchor-id="environment">Environment</h2>
+<section id="light" class="level3">
+<h3 class="anchored" data-anchor-id="light">Light</h3>
+<p>This component detects ambient light level around the phone, and it is measured in illuminance (lux). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.</p>
+</section>
+<section id="pressure" class="level3">
+<h3 class="anchored" data-anchor-id="pressure">Pressure</h3>
+<p>It measures the ambient air pressure to which the phone is subjected in hPa or mbar.</p>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -628,6 +900,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../LivePeople/tools.html" class="pagination-link" aria-label="Data processing tools">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data processing tools</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../LivePeople/dataset.html" class="pagination-link" aria-label="Dataset structure">
+        <span class="nav-page-text">Dataset structure</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
