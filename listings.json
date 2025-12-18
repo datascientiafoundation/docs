@@ -1,14 +1,14 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/LivePeople/intro.html"
-    ]
-  },
-  {
     "listing": "/LivePeople/intro.html",
     "items": [
       "/LivePeople/papers/diversityone.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/LivePeople/intro.html"
     ]
   }
 ]
