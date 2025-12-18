@@ -1,0 +1,58 @@
+---
+title: Catalog
+---
+
+The [LivePeople Catalog](https://livepeople.datascientia.eu/) provides datasets about the diversity of people, considering their daily behaviors, habits and lifestyles. The datasets are collected over time with different methodologies, ranging from behavioral studies and ecological momentary assessment to citizen social sciences approaches, and they were produced by multiple projects involving partners from around the world. Given the sensitive content of the datasets, these are made available upon request and user license. 
+
+![](_imgs/catalog.png){width=60% fig-align="center" fig-alt="LivePeople website."}
+
+## Documentation
+
+![](_imgs/documentation.png){width=75% fig-align="center"}
+
+To allow data consumers to discover which data are available and understand if it fits their purposes, each dataset is described by:
+
+- _[metadata](metadata.qmd)_ describes the data and the project that generated it;
+- _documentation_ details the project and the data;
+- _codebook_ shows data descriptive statistics for each dataset variable ([codebook example](https://datascientiafoundation.github.io/LivePeople-Documentation/codebooks/2020_DV1_Amrita_accelerometer.html) for the accelerometer sensor).
+
+## Dataset organization
+
+- **_basic Datasets_** are the basic units which contain the data from a single measurement instrument, such as [accelerometer](https://datascientiafoundation.github.io/LivePeople/datasets/2020-DiversityOne-Trento-Accelerometer/) or step counter (e.g., `2018-SU2-Trento-Accelerometer`). The name format is `<year>-<acronym for the data collection experiment>-<data collection location>-<dataset name>` of the sensor or measure instrument>.
+- **_Bundles_** are groups of basic datasets that can be classified as part of the same category or that are typically used together. For example, [motion sensors](https://datascientiafoundation.github.io/LivePeople/datasets/2020-DiversityOne-Copenhagen-Motion/) groups accelerometer and step counter. The bundle metadata lists the contained datasets.
+- **_Project_** is a data collection study carried out in one location, such as 2018-Smart Unitn 2-Trento. It contains all the datasets collected during the study.
+
+All these three types can be requested. Selecting a bundle or a project means that all the datasets that are contained are also selected.
+
+## How to get the datasets
+
+1.  **Navigate the data catalog.** Please look at the available datasets and documentation on the [data catalog]((https://livepeople.datascientia.eu/)).
+
+2.  **Proposal submission.** Interested researchers submit a data download
+    request through the [web form](https://ds.datascientia.eu/marketplace/welcome) by providing the following information:
+
+    -   Names and contact information of the authors working on the
+        dataset and their institution.
+    -   Description of the research proposal. Provide a description of
+        your idea and how you plan to use the dataset.
+    -   Select from a list the datasets to download. On the data
+        catalog, you can find and navigate the list of downloadable
+        datasets and navigate the codebooks.
+
+    The key requirements to obtain a copy of the data are the affiliation
+    with a research institution, either private or public, the coherence
+    between the requested data and the research proposal, and [the
+    acceptance of the Terms and License Agreement](https://ds.datascientia.eu/marketplace/public/data-access-policy). Key licensing terms include:
+
+    - datasets are used exclusively for research purposes;
+    -  redistribution of the datasets is prohibited;
+    -  datasets cannot be publicly shared (e.g., on a website);
+    -  any attempt to reverse engineer any portion of the data or to
+        re-identify the participants is strictly forbidden and could
+        constitute unlawful processing of personal data.
+
+2.  **Dataset download.** The proposal request is evaluated by the
+    University of Trento (UNITN), and in case of a positive response,
+    the participants receive an email with the instructions for
+    downloading the dataset after a few days. The requested data are
+    shared with the participants through dedicated storage.

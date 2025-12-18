@@ -1,0 +1,48 @@
+project:
+  type: website
+
+website:
+  title: "Datascientia Docs"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: About
+        href: https://datascientia.eu/about-us/
+        target: _blank
+  sidebar:
+    style: "docked"
+    search: true
+    logo: datascientia.png
+    contents:
+      - section: LivePeople
+        href: LivePeople/intro.qmd
+        contents:
+          - section: Data catalog
+            href: LivePeople/catalog.qmd
+            contents: 
+            - LivePeople/metadata.qmd
+            - LivePeople/tools.qmd
+            - LivePeople/faq.qmd
+  page-navigation: true
+  back-to-top-navigation: true
+  page-footer: 
+    left: "© 2025 [DataScientia](https://datascientia.eu/) – All rights reserved"
+    right:
+      - icon: linkedin
+      - href: https://www.linkedin.com/company/datascientia/
+
+link-external-icon: true
+link-external-newwindow: true
+
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

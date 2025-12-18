@@ -1,0 +1,15 @@
+---
+title: "Datascientia docs"
+image: false
+listing:
+  contents:
+    - LivePeople/intro.qmd
+  type: grid
+  id: ds-area-listings
+---
+
+This website contains the technical documentation of [Datascientia services](https://datascientia.eu/).
+
+::: {#ds-area-listings}
+:::
+

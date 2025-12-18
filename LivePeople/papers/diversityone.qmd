@@ -1,0 +1,13 @@
+---
+title: DiversityOne
+image: ./_imgs/diversityone.png
+---
+
+
+[DiversityOne](https://datascientia.eu/projects/diversityone/) is one of the largest and most geographically diverse datasets for studying everyday life behavior of college students through smartphone sensors and self-reports.
+
+## Abstract
+
+Understanding everyday life behavior of young adults through personal devices, e.g., smartphones and smartwatches, is key for various applications, from enhancing the user experience in mobile apps to enabling appropriate interventions in digital health apps. Towards this goal, previous studies have relied on datasets combining passive sensor data with human-provided annotations or self-reports. However, many existing datasets are limited in scope, often focusing on specific countries primarily in the Global North, involving a small number of participants, or using a limited range of pre-processed sensors. These limitations restrict the ability to capture cross-country variations of human behavior, including the possibility of studying model generalization, and robustness. To address this gap, we introduce DiversityOne, a dataset which spans eight countries (**China, Denmark, India, Italy, Mexico, Mongolia, Paraguay, and the United Kingdom**) and includes data from **782 college students** over **four weeks**. DiversityOne contains data from **26 smartphone sensor** modalities and **350K+ self-reports**. As of today, it is one of the largest and most diverse publicly available datasets, while featuring extensive demographic and psychosocial survey data. DiversityOne opens the possibility of studying important research problems in ubiquitous computing, particularly in domain adaptation and generalization across countries, all research areas so far largely underexplored because of the lack of adequate datasets.
+
+![](_imgs/diversityone.png){width="90%" fig-align="center"}

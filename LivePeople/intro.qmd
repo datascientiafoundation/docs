@@ -1,0 +1,67 @@
+---
+title: LivePeople
+bibliography: references.bib
+image: _imgs/LP.png
+listing:
+  contents: papers/*.qmd
+  type: grid
+  id: paper-listings
+---
+
+LivePeople is a scalable citizen science infrastructure for personal data projects. In this documentation we focus on how to use and access the existing datasets.
+
+
+# Dataset examples 
+
+::: {#paper-listings}
+:::
+
+## Examples of dataset usages
+
+Previous studies investigated various aspects of high-quality rich
+datasets that include sensor data and self-reports. Some examples are (for papers based on _DiversityOne_, we list the sensor modalities used):
+
+- the use of **social media** [@giunchiglia2018mobile]
+  
+  _Datasets_: the authors used the [SmartUnitn2 dataset](https://datascientia.eu/projects/su2/), which has the same modalities and variables as _DiversityOne_: time diaries, application usage, screen status.
+
+- the quality of answers and **mislabeling** [@bontempelli2020learning]
+
+  _Datasets_: authors used [SmartUnitn2 dataset](https://datascientia.eu/projects/su2/), a similar dataset. The corresponding input modalities in _DiversityOne_ are time diaries, acceleration, screen status, airplane mode, gyroscope, ring mode, battery charge, battery level, magnetic field, doze modality,  headset plugged in, music playback, location, WiFi network connected to, proximity, WiFi networks available, Bluetooth, running application, notifications, atmospheric pressure (the following modalities are not available in _DiversityOne_: linear acceleration, gravity, rotation vector, orientation, temperature, humidity, detect incoming and outgoing calls, detect incoming and outgoing SMS).
+
+- the usefulness of self-reports towards understanding the user's **subjective perspective** of the local context [@zhang2021putting];
+
+  _Datasets_: [SmartUnitn2 dataset](https://datascientia.eu/projects/su2/). The corresponding input modalities in _DiversityOne_ are time diaries, acceleration, screen status, airplane mode, gyroscope, ring mode, battery charge, battery level, magnetic field, doze modality,  headset plugged in, music playback, activity performed (Google Activity Recognition API), location, WiFi network connected to, proximity, WiFi networks available, Bluetooth, notifications, atmospheric pressure (the following modalities are not available in _DiversityOne_: linear acceleration, gravity, rotation vector, orientation, temperature, humidity). 
+
+- the impact of **COVID** on the students' lives [@girardini2023adaptation]
+
+  _Datasets_: the authors relied on [SmartUnitn2 dataset](https://datascientia.eu/projects/su2/) and _DiversityOne_ in Italy: time diaries.
+
+- cross-individual **activity recognition** [@shen2022federated]; 
+
+- **mood** inference [@meegahapola2023generalization] 
+  
+  _Datasets_: for all countries: location, Bluetooth, WiFi, cellular, notifications, proximity, activity steps, screen events, user presence, touch events, app events, time diaries.
+
+- **diversity perceptions** in a community [@kun2022];
+
+- **activity recognition** [@bouton2022your]
+
+  _Datasets_: accelerometer and time diaries data of Denmark, UK, Mongolia, Paraguay and Italy.
+
+- **social context** inference while eating [@kammoun2023understanding]
+
+  _Datasets_: for all countries  activity type, step count, location, phone signal, WiFi, Bluetooth, battery, and proximity, notifications, application usage, screen episodes user presence and time diaries.
+
+- inferring **mood-while-eating** [@bangamuarachchi2023inferring]
+
+  _Datasets_: for all countries: location, Bluetooth, WiFi, cellular, notifications, proximity, activity, steps detector, step counter, screen events, user presence, touch events, app events, time diaries.
+
+- the generation of **contextually rich data** with other reference datasets [@giunchiglia2024big].
+
+  _Datasets_: authors used [SmartUnitn2 dataset](https://datascientia.eu/projects/su2/), a similar dataset. The corresponding input modalities in _DiversityOne_ are location and time diaries.
+
+### References
+
+::: {#refs}
+:::
