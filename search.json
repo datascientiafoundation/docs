@@ -1,0 +1,178 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Datascientia docs",
+    "section": "",
+    "text": "This website contains the technical documentation of Datascientia services.\n\n\n\n\n\n\n\n\n\n\nLivePeople\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "LivePeople/papers/diversityone.html",
+    "href": "LivePeople/papers/diversityone.html",
+    "title": "DiversityOne",
+    "section": "",
+    "text": "DiversityOne is one of the largest and most geographically diverse datasets for studying everyday life behavior of college students through smartphone sensors and self-reports."
+  },
+  {
+    "objectID": "LivePeople/papers/diversityone.html#abstract",
+    "href": "LivePeople/papers/diversityone.html#abstract",
+    "title": "DiversityOne",
+    "section": "Abstract",
+    "text": "Abstract\nUnderstanding everyday life behavior of young adults through personal devices, e.g., smartphones and smartwatches, is key for various applications, from enhancing the user experience in mobile apps to enabling appropriate interventions in digital health apps. Towards this goal, previous studies have relied on datasets combining passive sensor data with human-provided annotations or self-reports. However, many existing datasets are limited in scope, often focusing on specific countries primarily in the Global North, involving a small number of participants, or using a limited range of pre-processed sensors. These limitations restrict the ability to capture cross-country variations of human behavior, including the possibility of studying model generalization, and robustness. To address this gap, we introduce DiversityOne, a dataset which spans eight countries (China, Denmark, India, Italy, Mexico, Mongolia, Paraguay, and the United Kingdom) and includes data from 782 college students over four weeks. DiversityOne contains data from 26 smartphone sensor modalities and 350K+ self-reports. As of today, it is one of the largest and most diverse publicly available datasets, while featuring extensive demographic and psychosocial survey data. DiversityOne opens the possibility of studying important research problems in ubiquitous computing, particularly in domain adaptation and generalization across countries, all research areas so far largely underexplored because of the lack of adequate datasets."
+  },
+  {
+    "objectID": "LivePeople/intro.html",
+    "href": "LivePeople/intro.html",
+    "title": "LivePeople",
+    "section": "",
+    "text": "LivePeople is a scalable citizen science infrastructure for personal data projects. In this documentation we focus on how to use and access the existing datasets.",
+    "crumbs": [
+      "Home",
+      "LivePeople"
+    ]
+  },
+  {
+    "objectID": "LivePeople/intro.html#examples-of-dataset-usages",
+    "href": "LivePeople/intro.html#examples-of-dataset-usages",
+    "title": "LivePeople",
+    "section": "Examples of dataset usages",
+    "text": "Examples of dataset usages\nPrevious studies investigated various aspects of high-quality rich datasets that include sensor data and self-reports. Some examples are (for papers based on DiversityOne, we list the sensor modalities used):\n\nthe use of social media (Giunchiglia et al. 2018)\nDatasets: the authors used the SmartUnitn2 dataset, which has the same modalities and variables as DiversityOne: time diaries, application usage, screen status.\nthe quality of answers and mislabeling (Bontempelli et al. 2020)\nDatasets: authors used SmartUnitn2 dataset, a similar dataset. The corresponding input modalities in DiversityOne are time diaries, acceleration, screen status, airplane mode, gyroscope, ring mode, battery charge, battery level, magnetic field, doze modality, headset plugged in, music playback, location, WiFi network connected to, proximity, WiFi networks available, Bluetooth, running application, notifications, atmospheric pressure (the following modalities are not available in DiversityOne: linear acceleration, gravity, rotation vector, orientation, temperature, humidity, detect incoming and outgoing calls, detect incoming and outgoing SMS).\nthe usefulness of self-reports towards understanding the user’s subjective perspective of the local context (Zhang et al. 2021);\nDatasets: SmartUnitn2 dataset. The corresponding input modalities in DiversityOne are time diaries, acceleration, screen status, airplane mode, gyroscope, ring mode, battery charge, battery level, magnetic field, doze modality, headset plugged in, music playback, activity performed (Google Activity Recognition API), location, WiFi network connected to, proximity, WiFi networks available, Bluetooth, notifications, atmospheric pressure (the following modalities are not available in DiversityOne: linear acceleration, gravity, rotation vector, orientation, temperature, humidity).\nthe impact of COVID on the students’ lives (Girardini et al. 2023)\nDatasets: the authors relied on SmartUnitn2 dataset and DiversityOne in Italy: time diaries.\ncross-individual activity recognition (Shen et al. 2022);\nmood inference (Meegahapola et al. 2023)\nDatasets: for all countries: location, Bluetooth, WiFi, cellular, notifications, proximity, activity steps, screen events, user presence, touch events, app events, time diaries.\ndiversity perceptions in a community (Kun et al. 2022);\nactivity recognition (Bouton-Bessac, Meegahapola, and Gatica-Perez 2022)\nDatasets: accelerometer and time diaries data of Denmark, UK, Mongolia, Paraguay and Italy.\nsocial context inference while eating (Kammoun, Meegahapola, and Gatica-Perez 2023)\nDatasets: for all countries activity type, step count, location, phone signal, WiFi, Bluetooth, battery, and proximity, notifications, application usage, screen episodes user presence and time diaries.\ninferring mood-while-eating (Bangamuarachchi et al. 2025)\nDatasets: for all countries: location, Bluetooth, WiFi, cellular, notifications, proximity, activity, steps detector, step counter, screen events, user presence, touch events, app events, time diaries.\nthe generation of contextually rich data with other reference datasets (Giunchiglia and Li 2024).\nDatasets: authors used SmartUnitn2 dataset, a similar dataset. The corresponding input modalities in DiversityOne are location and time diaries.\n\n\nReferences\n\n\nBangamuarachchi, Wageesha, Anju Chamantha, Lakmal Meegahapola, Haeeun Kim, Salvador Ruiz-Correa, Indika Perera, and Daniel Gatica-Perez. 2025. “Inferring Mood-While-Eating with Smartphone Sensing and Community-Based Model Personalization.” ACM Transactions on Computing for Healthcare (HEALTH). https://arxiv.org/abs/2306.00723.\n\n\nBontempelli, Andrea, Stefano Teso, Fausto Giunchiglia, and Andrea Passerini. 2020. “Learning in the Wild with Incremental Skeptical Gaussian Processes.” In IJCAI. https://www.ijcai.org/proceedings/2020/0399.pdf.\n\n\nBouton-Bessac, Emma, Lakmal Meegahapola, and Daniel Gatica-Perez. 2022. “Your Day in Your Pocket: Complex Activity Recognition from Smartphone Accelerometers.” In International Conference on Pervasive Computing Technologies for Healthcare, 247–58. Springer. https://www.idiap.ch/\\~gatica/publications/BoutonBessacEtAl-ph22.pdf.\n\n\nGirardini, Nicolò Alessandro, Simone Centellegher, Andrea Passerini, Ivano Bison, Fausto Giunchiglia, and Bruno Lepri. 2023. “Adaptation of Student Behavioural Routines During Covid-19: A Multimodal Approach.” EPJ Data Science 12 (1): 55. https://epjds.epj.org/articles/epjdata/abs/2023/01/13688_2023_Article_429/13688_2023_Article_429.html.\n\n\nGiunchiglia, Fausto, and Xiaoyue Li. 2024. “Big-Thick Data Generation via Reference and Personal Context Unification.” In ECAI 2024, 1975–84. IOS Press. https://ebooks.iospress.nl/doi/10.3233/FAIA240713.\n\n\nGiunchiglia, Fausto, Mattia Zeni, Elisa Gobbi, Enrico Bignotti, and Ivano Bison. 2018. “Mobile Social Media Usage and Academic Performance.” Computers in Human Behavior 82: 177–85. https://arxiv.org/abs/2004.01392.\n\n\nKammoun, Nathan, Lakmal Meegahapola, and Daniel Gatica-Perez. 2023. “Understanding the Social Context of Eating with Multimodal Smartphone Sensing: The Role of Country Diversity.” In Proceedings of the 25th International Conference on Multimodal Interaction, 604–12. https://arxiv.org/abs/2306.00709.\n\n\nKun, Peter, Amalia de Götzen, Miriam Bidoglia, Niels Jørgen Gommesen, and George Gaskell. 2022. “Exploring Diversity Perceptions in a Community Through a q&a Chatbot.” In DRS2022: Bilbao Design Research Society, 1–19. https://arxiv.org/abs/2402.08558.\n\n\nMeegahapola, Lakmal, William Droz, Peter Kun, Amalia De Götzen, Chaitanya Nutakki, Shyam Diwakar, et al. 2023. “Generalization and Personalization of Mobile Sensing-Based Mood Inference Models: An Analysis of College Students in Eight Countries.” Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 6 (4): 1–32. https://arxiv.org/abs/2211.03009.\n\n\nShen, Qiang, Haotian Feng, Rui Song, Stefano Teso, Fausto Giunchiglia, Hao Xu, et al. 2022. “Federated Multi-Task Attention for Cross-Individual Human Activity Recognition.” In IJCAI, 3423–29. IJCAI. https://www.ijcai.org/proceedings/2022/0475.pdf.\n\n\nZhang, Wanyi, Qiang Shen, Stefano Teso, Bruno Lepri, Andrea Passerini, Ivano Bison, and Fausto Giunchiglia. 2021. “Putting Human Behavior Predictability in Context.” EPJ Data Science 10 (1): 42. https://epjds.epj.org/articles/epjdata/abs/2021/01/13688_2021_Article_299/13688_2021_Article_299.html.",
+    "crumbs": [
+      "Home",
+      "LivePeople"
+    ]
+  },
+  {
+    "objectID": "LivePeople/data_preparation.html",
+    "href": "LivePeople/data_preparation.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "LivePeople/catalog.html",
+    "href": "LivePeople/catalog.html",
+    "title": "Catalog",
+    "section": "",
+    "text": "The LivePeople Catalog provides datasets about the diversity of people, considering their daily behaviors, habits and lifestyles. The datasets are collected over time with different methodologies, ranging from behavioral studies and ecological momentary assessment to citizen social sciences approaches, and they were produced by multiple projects involving partners from around the world. Given the sensitive content of the datasets, these are made available upon request and user license.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog"
+    ]
+  },
+  {
+    "objectID": "LivePeople/catalog.html#documentation",
+    "href": "LivePeople/catalog.html#documentation",
+    "title": "Catalog",
+    "section": "Documentation",
+    "text": "Documentation\n\n\n\n\n\nTo allow data consumers to discover which data are available and understand if it fits their purposes, each dataset is described by:\n\nmetadata describes the data and the project that generated it;\ndocumentation details the project and the data;\ncodebook shows data descriptive statistics for each dataset variable (codebook example for the accelerometer sensor).",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog"
+    ]
+  },
+  {
+    "objectID": "LivePeople/catalog.html#dataset-organization",
+    "href": "LivePeople/catalog.html#dataset-organization",
+    "title": "Catalog",
+    "section": "Dataset organization",
+    "text": "Dataset organization\n\nbasic Datasets are the basic units which contain the data from a single measurement instrument, such as accelerometer or step counter (e.g., 2018-SU2-Trento-Accelerometer). The name format is &lt;year&gt;-&lt;acronym for the data collection experiment&gt;-&lt;data collection location&gt;-&lt;dataset name&gt; of the sensor or measure instrument&gt;.\nBundles are groups of basic datasets that can be classified as part of the same category or that are typically used together. For example, motion sensors groups accelerometer and step counter. The bundle metadata lists the contained datasets.\nProject is a data collection study carried out in one location, such as 2018-Smart Unitn 2-Trento. It contains all the datasets collected during the study.\n\nAll these three types can be requested. Selecting a bundle or a project means that all the datasets that are contained are also selected.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog"
+    ]
+  },
+  {
+    "objectID": "LivePeople/catalog.html#how-to-get-the-datasets",
+    "href": "LivePeople/catalog.html#how-to-get-the-datasets",
+    "title": "Catalog",
+    "section": "How to get the datasets",
+    "text": "How to get the datasets\n\nNavigate the data catalog. Please look at the available datasets and documentation on the data catalog.\nProposal submission. Interested researchers submit a data download request through the web form by providing the following information:\n\nNames and contact information of the authors working on the dataset and their institution.\nDescription of the research proposal. Provide a description of your idea and how you plan to use the dataset.\nSelect from a list the datasets to download. On the data catalog, you can find and navigate the list of downloadable datasets and navigate the codebooks.\n\nThe key requirements to obtain a copy of the data are the affiliation with a research institution, either private or public, the coherence between the requested data and the research proposal, and the acceptance of the Terms and License Agreement. Key licensing terms include:\n\ndatasets are used exclusively for research purposes;\nredistribution of the datasets is prohibited;\ndatasets cannot be publicly shared (e.g., on a website);\nany attempt to reverse engineer any portion of the data or to re-identify the participants is strictly forbidden and could constitute unlawful processing of personal data.\n\nDataset download. The proposal request is evaluated by the University of Trento (UNITN), and in case of a positive response, the participants receive an email with the instructions for downloading the dataset after a few days. The requested data are shared with the participants through dedicated storage.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog"
+    ]
+  },
+  {
+    "objectID": "LivePeople/faq.html",
+    "href": "LivePeople/faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "The DataScientia team is at your disposal for any questions related to technical aspects, clarifications or possible collaborations. Contact Us.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "LivePeople/faq.html#data-catalog-search-and-navigation",
+    "href": "LivePeople/faq.html#data-catalog-search-and-navigation",
+    "title": "FAQ",
+    "section": "1. Data catalog search and navigation",
+    "text": "1. Data catalog search and navigation\n\nWhat is the LivePeople catalog?\nSee the catalog description.\n\n\nWhy are you not distributing your data through one of the existing data catalogs?\nCurrent data catalogs are not designed to distribute person-centric data at our granularity level, thus requiring custom procedures. To reduce the risk of re-identification or abuse, the data are shared only for research purposes with identified researchers. The current procedure has been designed with legal and privacy experts.\n\n\nWhat is the difference between datasets, bundles and projects?\nSee the dataset organization.\n\n\nWhy are the datasets organized into datasets, bundles and projects?\nBased on the GDPR minimization principle, data must be adequate, limited, and relevant for the analysis. Thus, data from measurement instruments, such as accelerometer and time diaries, are provided separately. Researchers can request access to a single dataset of a specific data collection (e.g., WiFi networks in Italy in the DiversityOne data collection) or a combination of datasets from multiple data collection or sensors. To streamline dataset selection and download, we have created thematic bundles that group data commonly used together for key research purposes. For instance, activity recognition studies can download the motion bundle grouping accelerometer, activities, step counter and others. Another bundle is tailored for studying social interaction and combines questionnaires, time diaries, and location data. The catalog lists both bundles and datasets containing one single sensor.\n\n\nWhat is the meaning of the metadata?\nThe metadata provides information about the dataset and allows the data consumers to understand whether it fits their needs or research questions. The metadata glossary describes them.\n\n\nWhat is the Parquet format?\nThe format of each file in the datasets is Apache Parquet, an efficient data storage format that can be opened by most of the existing data processing tools. The format is supported by most of the main data analysis tools. Suggested tools to process or view the data are:\n\nthe Python library pandas pd.read_parquet('path/to/dataset.parquet');\nDuckDB, a in-process database solution;\nTad, a desktop application to visualize parquet files.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "LivePeople/faq.html#data-request-download-and-usage",
+    "href": "LivePeople/faq.html#data-request-download-and-usage",
+    "title": "FAQ",
+    "section": "2. Data request, download and usage",
+    "text": "2. Data request, download and usage\n\nCan I download the data directly from the data catalog?\nNo, data are not directly accessible from the data catalog. Each dataset webpage has a link to the request forms. LivePeople catalog provides access to the metadata only.\n\n\nHow to download the data?\nAfter submitting the form online, if the request is accepted, you will receive an email with instructions on how to access the storage with the requested datasets. Access will be granted for a limited period.\n\n\nCan I request the data from multiple data collection projects?\nYes, in the request form, you can request data from multiple projects.\n\n\nCan I request all the data of a project?\nYes, Datascientia will evaluate the coherence of the research proposal with the requested datasets.\n\n\nWhat are the eligibility criteria to request the data?\nThe specific criteria for each dataset are listed in the license. For most of the dataset, the main requirement is to be a researcher affiliated with a research institution, and the usage of the data is restricted to research purposes.\n\n\nCan I also use the same data for another project besides the approved one?\nNo, a new dataset request or an update of the previous project proposal is needed.\n\n\nCan I redistribute or transfer the downloaded datasets or their derived datasets to third parties?\nThe research entity can’t, directly or indirectly, sell, license or sub-license, rent or otherwise transfer to third parties the dataset provided by this catalog, nor permit any third party to do so. Specific datasets may have different policies, please look at the use terms and license linked in the metadata in each dataset webpage.\n\n\nCan I keep the data after the end of my research project?\nNo, the research entity that requested the data deletes it at the end date specified in the research proposal. The research entity is asked to notify the elimination.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "LivePeople/faq.html#data-upload-and-custom-catalog",
+    "href": "LivePeople/faq.html#data-upload-and-custom-catalog",
+    "title": "FAQ",
+    "section": "3. Data upload and custom catalog",
+    "text": "3. Data upload and custom catalog\nYou can upload your metadata values and/or your data to our catalog.\n\nWhy should I create my catalog?\nYou can create your own instance of the catalog to redistribute data that you own. This will allow you to join the Datascientia network and increase the visibility of your data. Contact us if you have additional questions or if you want to join the community.\n\n\nHow can I create my own data catalog?\nDataScientia foundation provides a data catalog template, built on top of JKAN, which can be customized to your needs. Contact DataScientia to get the template, and become part of the community with your catalog.\n\n\nWhy should I upload my metadata and/or data on your catalog?\nThis allows you to make your data more visible and, if you want, leverage our data distribution procedure.\n\n\nHow can I upload my own data?\nContact us and we will provide the detailed steps. In summary, you need to provide the metadata values, data documentation, license, and how interested data consumers can download the data.\n\n\nCan I organize a data collection using your infrastructure and/or services?\nYes, we support you in designing the study and provide access to our services. Contact us and describe what study you would like to organize.",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "LivePeople/metadata.html",
+    "href": "LivePeople/metadata.html",
+    "title": "Dataset metadata",
+    "section": "",
+    "text": "Field Name\nDescription\n\n\n\n\nProject title\nname of the DataScientia project in a natural language as a string\n\n\nProject url\nthis attribute encodes the dereferenciable URL of the DataScientia project\n\n\nProject webpage\nthis attribute encodes the dereferenciable URL of the DataScientia project\n\n\nProject keywords\nlist of keywords in a natural language to quickly understand the theme of the project\n\n\nProject type\nthe type of the DataScientia project. e.g., Knowledge Resource Generation, Knowledge Resource Annotation, etc\n\n\nProject description\ndescription of the DataScientia project in a natural language, namely (i) the project name and objectives; (ii) the type of data collected; (iii) suggested reuse.\n\n\nProject start date\nthe date of the commencement of a DataScientia project\n\n\nProject end date\nthe date of conclusion of a DataScientia project\n\n\nProject funding agency\nthe name of the agency or institution funding a DataScientia project and, if available, the grant agreement number. European projects also have a DOI, e.g., https://doi.org/10.3030/823783\n\n\nProject input\nthis (repeatable) attribute encodes the various inputs (e.g., datasets, specifications, etc.) with respect to a DataScientia project.\n\n\nProject output\nthis (repeatable) attribute encodes the various outputs (e.g., datasets, domain languages, etc.) with respect to a DataScientia project.\n\n\nProject coordinator\nthe name of the research coordinator in charge of a DataScientia project\n\n\nProject observations\nthis attribute can be used to record any observations about a DataScientia project in a natural language.\n\n\nProject coordinator organization\nInstitution of the ds:prjCoordinator\n\n\nProject project area\nCategory of the project that pertains to the Catalog (LivePeople, LiveLanguage, LiveKnowledge, LiveData, LiveMedia).\n\n\nProject members\nOther members who took part in the project with roles other than the coordinator\n\n\nProject target location\nexpected project data collection area\n\n\nProject target population\nSociodemographic characteristics that were adopted as population inclusion criteria (e.g. gender, age, educational qualification, profession). Multiple options can be selected\n\n\nProject overall participants involved\nTotal number of participants who were involved in the project\n\n\nProject selected participants\nNumber of participants who have been selected for the project (less than or equal to ds:prjOverallPeopleInvolved), if the project has multiple phases\n\n\nProject type of measurements\nSurvey methods that were used to collect participant data (i.e., Questionnaire, Structured Interview, Semi-Structured Interview, Participant Observation, Intensive Longitudinal Survey). Multiple options can be selected\n\n\nProject IRB approval date\nDate of Institutional review board (IRB) approval of the project\n\n\nProject IRB approval organization\nInstitution to which the committee belongs to\n\n\nProject IRB approval number\nNumber of protocol of the approval\n\n\nProject cite as\nBibtext citation of the project\n\n\nProject maintenance\ndescription of the dataset maintenance process: how often is the dataset updated, how updates will be communicated, who is responsible for the updates, whether and how older versions will be supported\n\n\nProject latitude\nLatitude of the centroid of ds:prjTargetLocation (maily for visualization purposes on the catalog website)\n\n\nProject longitude\nLongitude of the centroid of ds:prjTargetLocation (maily for visualization purposes on the catalog website)\n\n\nProject documentation name\nProject documentation name\n\n\nProject additional material name\nProject additional material name\n\n\nData name\nthe name of the dataset in a natural language\n\n\nData description\na description of the dataset\n\n\nData version\nthe version of the dataset. The schema to follow is MAJOR.MINOR.PATCH as described https://semver.org/spec/v2.0.0.html\n\n\nData publication timestamp\nthe timestamp of the publication of the dataset in the respective catalog.\n\n\nData license\nlicense of the dataset\n\n\nData url\nthe dereferenceable URL of the dataset\n\n\nData keyword\nthe keywords which can quickly convey the topic of the dataset\n\n\nData publisher\nthe publisher of the dataset\n\n\nData creator\nthe creator of the dataset. Individual member of the community or organization.\n\n\nData owner\nthe owner of the dataset. Individual member of the community or organization.\n\n\nData language\nThe language of the dataset (only if dataset type==Synchronic interaction | dataset type==Diachronic interaction). Recommended values are taken from https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes. When not applicable use N/A\n\n\nData level\nthe knowledge level of the dataset, e.g., L1-2, L4\n\n\nData size\nthe byte size of the dataset (e.g., the size of the file parquet)\n\n\nData domain\nthe domain to which the dataset belongs. Possible values are: Digital University, Territory & Society, Health\n\n\nData file format\ntype of the file using MIME format https://www.iana.org/assignments/media-types/media-types.xhtml\n\n\nData detailed description\nlinks the dataset to its personalized project web page. Please note that is different from the ds:prjURL attribute, which links to the datascientia project on the community.\n\n\nData download request\nemail of the institution responsible for validating the download request and share the data or link to the form to fill\n\n\nData conditions of access\nconditions that affect the availability of the data. E.g., only for scientific purposes\n\n\nData genre\nGenre of the dataset: images, tabular data, geographical file\n\n\nData is accessible for free\n\n\n\nData expires\nWhen the dataset is no longer available\n\n\nData type\nThe type of dataset\n\n\nData sensor type\nThe type of sensor (only if dataset type == Sensor)\n\n\nData start date\nThe begin of the data collection (i.e., the oldest date in the dataset)\n\n\nData end date\nThe end of the data collection (i.e., the most recent date in the dataset)\n\n\nData five stars\nRanking based on Tim Berners-Lee’s 5-star deployment scheme for Open Data (https://5stardata.info/en/). iLog data after the data preparation are 3 stars\n\n\nData origin\nOrigin of the data. Synthetic: generated from an algorithm. Direct observation: collected from humans through human behavior studies. Composition: dataset resulting from the composition of other datasets. Feature engineering: dataset as the result of features extraction or aggregation of existing datasets;\n\n\nData creative work status\nStatus of the data. Raw: no preprocessing has been performed. Cleaned: cleaning procedures has been applied to the raw data. Reduced: the data has been aggregated, e.g., to generate features. Enriched: contains additional data from third parties.\n\n\nData download request name\nThe name of the document to request the dataset\n\n\nData documentation name\nlink to the dataset documentation, e.g., techinical report describing the data collection (design, collection, preparation, main results)\n\n\nData additional material name\nlink to the materials used during the research (e.g., focus group tracks, interviews, and questionnaires)\n\n\nData codebook name\nA codebook describes the contents of a data collection. A well-documented code- book contains information intended to be complete and self-explanatory for each variable in a dataset.\n\n\nData identifier\nalpha numeric code identifing the resource (see Identifier sheet)\n\n\nData changelog url\n\n\n\nData licence url\n\n\n\nData sha256\nhash of the content of the file\n\n\nData update timestamp\nlast date the dataset has been updated\n\n\nData based on\nA resource from which this work is derived or from which it is a modification or adaptation. It is a link to Dataset, Project, Url\n\n\nData sensor name\nsingle sensor name\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog",
+      "Dataset metadata"
+    ]
+  },
+  {
+    "objectID": "LivePeople/tools.html",
+    "href": "LivePeople/tools.html",
+    "title": "Data processing tools",
+    "section": "",
+    "text": "On this page, we collect valuable resources for processing the datasets of the LivePeople catalog. The page will be updated over time.\n\nFeature engineering code is available on Github. This code generates a set of features that can be used to train machine learning models.\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "LivePeople",
+      "Data catalog",
+      "Data processing tools"
+    ]
+  }
+]
