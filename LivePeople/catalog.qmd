@@ -26,7 +26,7 @@ All these three types can be requested. Selecting a bundle or a project means th
 
 ## How to get the datasets
 
-1.  **Navigate the data catalog.** Please look at the available datasets and documentation on the [data catalog]((https://livepeople.datascientia.eu/)).
+1.  **Navigate the data catalog.** Please look at the available datasets and documentation on the [data catalog](https://livepeople.datascientia.eu/).
 
 2.  **Proposal submission.** Interested researchers submit a data download
     request through the [web form](https://ds.datascientia.eu/marketplace/welcome) by providing the following information:

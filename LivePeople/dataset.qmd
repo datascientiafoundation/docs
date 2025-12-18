@@ -1,0 +1,58 @@
+---
+title: Dataset structure
+---
+
+The folder structure of the downloaded dataset is the following.
+
+```bash
+.
+├── Site_Trento_ITA
+│   ├── Diachronic-Interactions
+│   │   └── timediaries.parquet
+│   ├── Synchronic-Interactions
+│   │   ├── matching.csv
+│   │   ├── survey1.parquet
+│   │   ├── survey2.parquet
+│   │   └── survey3.parquet
+│   └── Sensors
+│       ├── App-usage
+│       │   ├── application.parquet
+│       │   ├── headsetplug.parquet
+│       │   ├── music.parquet
+│       │   └── notification.parquet
+│       ├── Connectivity
+│       │   ├── bluetooth.parquet
+│       │   ├── cellularnetwork.parquet
+│       │   ├── wifi.parquet
+│       │   └── wifinetworks.parquet
+│       ├── Device-usage
+│       │   ├── airplanemode.parquet
+│       │   ├── doze.parquet
+│       │   ├── touch.parquet
+│       │   ├── batterycharge.parquet
+│       │   ├── ringmode.parquet
+│       │   ├── userpresence.parquet
+│       │   ├── batterymonitoringlog.parquet
+│       │   └── screen.parquet
+│       ├── Environment
+│       │   ├── light.parquet
+│       │   └── pressure.parquet
+│       ├── Motion
+│       │   ├── accelerometer.parquet
+│       │   ├── gyroscope.parquet
+│       │   ├── stepdetector.parquet
+│       │   ├── activitiespertime.parquet
+│       │   └── stepcounter.parquet
+│       └── Position
+│           ├── location_poi.parquet
+│           ├── magneticfield.parquet
+│           ├── location_rd.parquet
+│           └── proximity.parquet
+├── Site_Copenhagen_DEN
+│   ├── Diachronic-Interactions
+│   │   └── ...
+│   ├── Synchronic-Interactions
+│   │   └── ...
+│   └── Sensors
+│       └── ...
+```

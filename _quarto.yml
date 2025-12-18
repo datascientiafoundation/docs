@@ -23,6 +23,8 @@ website:
             contents: 
             - LivePeople/metadata.qmd
             - LivePeople/tools.qmd
+            - LivePeople/sensors.qmd
+            - LivePeople/dataset.qmd
             - LivePeople/faq.qmd
   page-navigation: true
   back-to-top-navigation: true
