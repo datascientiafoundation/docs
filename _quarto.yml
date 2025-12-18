@@ -14,6 +14,7 @@ website:
     style: "docked"
     search: true
     logo: datascientia.png
+    collapse-level: 3
     contents:
       - section: LivePeople
         href: LivePeople/intro.qmd
