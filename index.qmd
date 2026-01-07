@@ -1,6 +1,5 @@
 ---
 title: "Datascientia docs"
-image: false
 listing:
   contents:
     - LivePeople/intro.qmd
@@ -9,6 +8,9 @@ listing:
 ---
 
 This website contains the technical documentation of [Datascientia services](https://datascientia.eu/).
+
+<br/>
+
 
 ::: {#ds-area-listings}
 :::
