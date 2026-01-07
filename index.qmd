@@ -7,7 +7,7 @@ listing:
   id: ds-area-listings
 ---
 
-This website contains the technical documentation of [Datascientia services](https://datascientia.eu/).
+Welcome to the technical documentation of the [DataScientia services]https://datascientia.eu/services/).
 
 <br/>
 
