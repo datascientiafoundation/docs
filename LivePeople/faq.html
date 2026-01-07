@@ -169,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../LivePeople/sensors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sensor</span></a>
+ <span class="menu-text">Sensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,8 +278,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="what-is-the-parquet-format">What is the Parquet format?</h3>
 <p>The format of each file in the datasets is <a href="https://parquet.apache.org/">Apache Parquet</a>, an efficient data storage format that can be opened by most of the existing data processing tools. The format is supported by most of the main data analysis tools. Suggested tools to process or view the data are:</p>
 <ul>
-<li>the Python library pandas <code>pd.read_parquet('path/to/dataset.parquet')</code>;</li>
-<li><a href="https://duckdb.org/">DuckDB</a>, a in-process database solution;</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/index.html">pandas</a>, a python library. Parquet file can be <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html">read</a> with <code>pd.read_parquet('path/to/dataset.parquet')</code>;</li>
+<li><a href="https://duckdb.org/">DuckDB</a>, a in-process database solution (see how to read parquet file on <a href="https://duckdb.org/docs/stable/data/parquet/overview">DuckDB documentation</a>);</li>
 <li><a href="https://www.tadviewer.com/">Tad</a>, a desktop application to visualize parquet files.</li>
 </ul>
 <hr>

@@ -51,7 +51,7 @@
     "href": "LivePeople/faq.html#data-catalog-search-and-navigation",
     "title": "FAQ",
     "section": "1. Data catalog search and navigation",
-    "text": "1. Data catalog search and navigation\n\nWhat is the LivePeople catalog?\nSee the catalog description.\n\n\nWhy are you not distributing your data through one of the existing data catalogs?\nCurrent data catalogs are not designed to distribute person-centric data at our granularity level, thus requiring custom procedures. To reduce the risk of re-identification or abuse, the data are shared only for research purposes with identified researchers. The current procedure has been designed with legal and privacy experts.\n\n\nWhat is the difference between datasets, bundles and projects?\nSee the dataset organization.\n\n\nWhy are the datasets organized into datasets, bundles and projects?\nBased on the GDPR minimization principle, data must be adequate, limited, and relevant for the analysis. Thus, data from measurement instruments, such as accelerometer and time diaries, are provided separately. Researchers can request access to a single dataset of a specific data collection (e.g., WiFi networks in Italy in the DiversityOne data collection) or a combination of datasets from multiple data collection or sensors. To streamline dataset selection and download, we have created thematic bundles that group data commonly used together for key research purposes. For instance, activity recognition studies can download the motion bundle grouping accelerometer, activities, step counter and others. Another bundle is tailored for studying social interaction and combines questionnaires, time diaries, and location data. The catalog lists both bundles and datasets containing one single sensor.\n\n\nWhat is the meaning of the metadata?\nThe metadata provides information about the dataset and allows the data consumers to understand whether it fits their needs or research questions. The metadata glossary describes them.\n\n\nWhat is the Parquet format?\nThe format of each file in the datasets is Apache Parquet, an efficient data storage format that can be opened by most of the existing data processing tools. The format is supported by most of the main data analysis tools. Suggested tools to process or view the data are:\n\nthe Python library pandas pd.read_parquet('path/to/dataset.parquet');\nDuckDB, a in-process database solution;\nTad, a desktop application to visualize parquet files.",
+    "text": "1. Data catalog search and navigation\n\nWhat is the LivePeople catalog?\nSee the catalog description.\n\n\nWhy are you not distributing your data through one of the existing data catalogs?\nCurrent data catalogs are not designed to distribute person-centric data at our granularity level, thus requiring custom procedures. To reduce the risk of re-identification or abuse, the data are shared only for research purposes with identified researchers. The current procedure has been designed with legal and privacy experts.\n\n\nWhat is the difference between datasets, bundles and projects?\nSee the dataset organization.\n\n\nWhy are the datasets organized into datasets, bundles and projects?\nBased on the GDPR minimization principle, data must be adequate, limited, and relevant for the analysis. Thus, data from measurement instruments, such as accelerometer and time diaries, are provided separately. Researchers can request access to a single dataset of a specific data collection (e.g., WiFi networks in Italy in the DiversityOne data collection) or a combination of datasets from multiple data collection or sensors. To streamline dataset selection and download, we have created thematic bundles that group data commonly used together for key research purposes. For instance, activity recognition studies can download the motion bundle grouping accelerometer, activities, step counter and others. Another bundle is tailored for studying social interaction and combines questionnaires, time diaries, and location data. The catalog lists both bundles and datasets containing one single sensor.\n\n\nWhat is the meaning of the metadata?\nThe metadata provides information about the dataset and allows the data consumers to understand whether it fits their needs or research questions. The metadata glossary describes them.\n\n\nWhat is the Parquet format?\nThe format of each file in the datasets is Apache Parquet, an efficient data storage format that can be opened by most of the existing data processing tools. The format is supported by most of the main data analysis tools. Suggested tools to process or view the data are:\n\npandas, a python library. Parquet file can be read with pd.read_parquet('path/to/dataset.parquet');\nDuckDB, a in-process database solution (see how to read parquet file on DuckDB documentation);\nTad, a desktop application to visualize parquet files.",
     "crumbs": [
       "Home",
       "LivePeople",
@@ -88,79 +88,79 @@
   {
     "objectID": "LivePeople/sensors.html",
     "href": "LivePeople/sensors.html",
-    "title": "Sensor",
+    "title": "Sensors",
     "section": "",
     "text": "List of discovered Bluetooth normal or low energy devices around the smartphone containing the following information:\n\nname: user-friendly name of the remote device\n\naddress: hardware MAC Address of the device\n\nbondstate: whether the remote device is connected\n\nrssi: Received Signal Strength Indicator\n\nclass code and class tag: Bluetooth class of the device (e.g., phone or computer), and the class describes the characteristics and capabilities of the device (e.g., audio and telephony)\n\n\n\n\nInformation of the cellular network to which the phone is connected to:\n\ncellid: identifier of the cell\n\ndbm: signal strength\n\ntype: type of the cell, possible values are lte, wcdma, gsm and cdma\n\n\n\n\nReturns information related to the WIFI network to which the phone is connected; if connected, it also reports the WIFI network ID. Additional features are:\n\nssid: (Service Set Identifier) ID or unique identifier of a digital network (Wi-Fi or WLAN)\n\nbssid: (Basic Service Set Identifier): sequence of characters that define a wireless computer network configured to communicate directly with each other\n\nisconnected: return whether the phone is connected to the WIFI\n\n\n\n\nReturns all WIFI networks detected by the smartphone. Additional features are:\n\naddress: unique identifier assigned to a network interface controller for use as a network address in communications within a network segment\n\ncapabilities: list of capabilities supported by the network, e.g., WPA and WPS\n\nfrequency: the WiFi frequency bands include 2.4 GHz and 5 GHz\n\nname: the name assigned to the WiFi network\n\nrssi: Received Signal Strength Indicator is an estimated measure of signal strength that indicates how effectively a device can receive signals from any wireless access point or Wi-Fi router. It provides insight into the quality and reliability of the connection, often measured in decibels (dBm) to represent signal strength. The RSSI value range is between 0 and -100, where 0 signifies stronger and more stable connections.",
     "crumbs": [
       "Home",
       "LivePeople",
       "Data catalog",
-      "Sensor"
+      "Sensors"
     ]
   },
   {
     "objectID": "LivePeople/sensors.html#connectivity",
     "href": "LivePeople/sensors.html#connectivity",
-    "title": "Sensor",
+    "title": "Sensors",
     "section": "",
     "text": "List of discovered Bluetooth normal or low energy devices around the smartphone containing the following information:\n\nname: user-friendly name of the remote device\n\naddress: hardware MAC Address of the device\n\nbondstate: whether the remote device is connected\n\nrssi: Received Signal Strength Indicator\n\nclass code and class tag: Bluetooth class of the device (e.g., phone or computer), and the class describes the characteristics and capabilities of the device (e.g., audio and telephony)\n\n\n\n\nInformation of the cellular network to which the phone is connected to:\n\ncellid: identifier of the cell\n\ndbm: signal strength\n\ntype: type of the cell, possible values are lte, wcdma, gsm and cdma\n\n\n\n\nReturns information related to the WIFI network to which the phone is connected; if connected, it also reports the WIFI network ID. Additional features are:\n\nssid: (Service Set Identifier) ID or unique identifier of a digital network (Wi-Fi or WLAN)\n\nbssid: (Basic Service Set Identifier): sequence of characters that define a wireless computer network configured to communicate directly with each other\n\nisconnected: return whether the phone is connected to the WIFI\n\n\n\n\nReturns all WIFI networks detected by the smartphone. Additional features are:\n\naddress: unique identifier assigned to a network interface controller for use as a network address in communications within a network segment\n\ncapabilities: list of capabilities supported by the network, e.g., WPA and WPS\n\nfrequency: the WiFi frequency bands include 2.4 GHz and 5 GHz\n\nname: the name assigned to the WiFi network\n\nrssi: Received Signal Strength Indicator is an estimated measure of signal strength that indicates how effectively a device can receive signals from any wireless access point or Wi-Fi router. It provides insight into the quality and reliability of the connection, often measured in decibels (dBm) to represent signal strength. The RSSI value range is between 0 and -100, where 0 signifies stronger and more stable connections.",
     "crumbs": [
       "Home",
       "LivePeople",
       "Data catalog",
-      "Sensor"
+      "Sensors"
     ]
   },
   {
     "objectID": "LivePeople/sensors.html#motion",
     "href": "LivePeople/sensors.html#motion",
-    "title": "Sensor",
+    "title": "Sensors",
     "section": "Motion",
     "text": "Motion\n\nAccelerometer\nMeasures the acceleration to which the phone is subjected and captures it as a 3D vector. The unit is \\(m/s^2\\).\n\n\nGyroscope\nMeasures the rotational forces to which the phone is subjected and it captures it as a 3D vector. The unit is \\(rad/s\\).\n\n\nActivities\nIt reports the user’s activity recognized by the Google Activity Recognition API. The recognized activities are in vehicle, on bicycle, on foot, running, still, tilting, walking and unknown. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.\n\n\nStep Counter\nIt counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on.\n\n\nStep Detector\nAn event is triggered each time the user takes a step.",
     "crumbs": [
       "Home",
       "LivePeople",
       "Data catalog",
-      "Sensor"
+      "Sensors"
     ]
   },
   {
     "objectID": "LivePeople/sensors.html#position",
     "href": "LivePeople/sensors.html#position",
-    "title": "Sensor",
+    "title": "Sensors",
     "section": "Position",
     "text": "Position\n\nLocation\nIt provides the geographic coordinates of the phone:\n\nlatitude: latitude in degrees\n\nlongitude: longitude in degrees\n\naltitude: the altitude in meters\n\naccuracy: estimated horizontal accuracy radius in meters\n\nspeed: current speed of the phone in \\(m/s\\)\n\nprovider: the source of the coordinates, i.e., GPS (hardware sensor in the devices), network (based on the WiFi network the phone is connected to) and passive (retrieve the location from other applications that already requested it)\n\nbearing: horizontal direction of travel and it’s the angle with respect to the north that is being faced\n\n\n\nMagnetic field\nReports the ambient magnetic field along the three sensor axes at the phone location.\n\n\nProximity\nMeasures the distance between the user’s head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., ‘near’, ‘far’).\n\n\nApp Usage\n\n\nHeadset status\nIndicates whether the headphones are connected to the phone.\n\n\nMusic Playback\nReturns whether music is being played on the phone using the default music player from the operating system. Track information is not collected.\n\n\nNotifications\nIt generates an event every time the phone receives a notification and when it is dismissed by the user:\n\nidentifier: the unique identifier of notification within the application that generated it\n\nisclearable: whether the notification can be canceled when the user clears the notifications\n\nisongoing: the notification refers to an event that is ongoing, e.g., a phone call\n\npackage: package name of the application\n\nstatus: whether the notification is posted or dismissed\n\n\n\nApplications\nReports the name of the application (or application package) currently running in the foreground of the phone.",
     "crumbs": [
       "Home",
       "LivePeople",
       "Data catalog",
-      "Sensor"
+      "Sensors"
     ]
   },
   {
     "objectID": "LivePeople/sensors.html#device-usage",
     "href": "LivePeople/sensors.html#device-usage",
-    "title": "Sensor",
+    "title": "Sensors",
     "section": "Device Usage",
     "text": "Device Usage\n\nAirplane Mode\nReturns whether the phone’s airplane mode is on or off. When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It’s accessible through the quick settings menu on most devices.\n\n\nBattery Charge\nReturns whether the phone is on charge:\n\nsource: type of power source connected to the device; possible values are USB, AC charge, wireless power source or unknown\n\nstatus: whether the device is being charged\n\n\n\nBattery Monitoring Log\nReturns the phone’s battery level:\n\nlevel: current battery level between 0 and 100\n\nscale: maximum level of the battery represented as a value between 0 and 100\n\n\n\nDoze Mode\nReturns whether the phone’s doze mode is on or off. Doze mode is a low-power state that a phone enters after a period of inactivity to conserve battery. In this mode, background processes and network access are restricted, allowing only essential tasks, such as high-priority notifications or alarms, to function periodically. This helps significantly reduce battery consumption while the device is idle.\n\n\nRing Mode\nReports the current ring status of the phone. When set to normal, the smartphone rings on incoming calls, messages and notifications by producing audible alerts. Other statuses are vibrate (where the phone vibrates instead of ringing) or silent (where all sounds are muted). Ring mode is often managed through the device’s sound settings.\n\n\nTouch event\nIt generates an event each time the user touches the screen.\n\n\nScreen status\nReturns whether the phone’s screen is on or off.\n\n\nUser Presence\nDetects when the user is present near the phone, for example, when the user unlocks the screen.",
     "crumbs": [
       "Home",
       "LivePeople",
       "Data catalog",
-      "Sensor"
+      "Sensors"
     ]
   },
   {
     "objectID": "LivePeople/sensors.html#environment",
     "href": "LivePeople/sensors.html#environment",
-    "title": "Sensor",
+    "title": "Sensors",
     "section": "Environment",
     "text": "Environment\n\nLight\nThis component detects ambient light level around the phone, and it is measured in illuminance (lux). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.\n\n\nPressure\nIt measures the ambient air pressure to which the phone is subjected in hPa or mbar.",
     "crumbs": [
       "Home",
       "LivePeople",
       "Data catalog",
-      "Sensor"
+      "Sensors"
     ]
   },
   {
@@ -168,7 +168,7 @@
     "href": "index.html",
     "title": "Datascientia docs",
     "section": "",
-    "text": "This website contains the technical documentation of Datascientia services.\n\n\n\n\n\n\n\n\n\n\nLivePeople\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+    "text": "This website contains the technical documentation of Datascientia services.\n\n\n\n\n\n\n\n\n\n\n\nLivePeople\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "LivePeople/intro.html",
