@@ -1,8 +1,84 @@
 ---
-title: Data processing tools
+title: Working with the dataset
 ---
 
+## Parquet format
+
+The format of each file in the datasets is [Apache Parquet](https://parquet.apache.org/), an efficient data storage format that can be opened by most of the existing data processing tools. The format is supported by most of the main data analysis tools. Some suggested tools for processing or viewing the data are reported below.
+
+### Pandas
+
+[pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) is a Python library and supports parquet format.
+Parquet file can be [read](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html) with the following code
+
+```python
+>>> import pandas as pd
+>>> pd.read_parquet("Sensors/Device-usage/batterycharge.parquet")
+
+       experimentid  userid               timestamp            source  status
+0        wenetItaly      55 2020-10-17 16:32:26.075  charging_unknown    True
+1        wenetItaly       5 2020-10-17 20:14:00.549              <NA>   False
+2        wenetItaly       3 2020-10-17 20:14:00.550              <NA>   False
+3        wenetItaly      34 2020-10-17 21:12:19.403       charging_ac    True
+4        wenetItaly      90 2020-10-17 21:13:19.405       charging_ac    True
+
+```
+
+### CLI
+
+[DuckDB](https://duckdb.org/)is a in-process database solution (see how to read parquet file on [DuckDB documentation](https://duckdb.org/docs/stable/data/parquet/overview));
+
+Run this command in the terminal
+
+```bash
+duckdb
+```
+
+Then, load the dataset
+
+```SQL
+select * from "Sensors/Device-usage/batterycharge.parquet/*.parquet';
+```
+
+And the result looks like
+
+```bash
+┌──────────────┬────────┬─────────────────────────┬──────────────────┬─────────┐
+│ experimentid │ userid │        timestamp        │      source      │ status  │
+│   varchar    │ int64  │      timestamp_ns       │     varchar      │ boolean │
+├──────────────┼────────┼─────────────────────────┼──────────────────┼─────────┤
+│ wenetItaly   │     55 │ 2020-10-15 16:32:26.075 │ charging_unknown │ true    │
+│ wenetItaly   │      5 │ 2020-10-16 20:14:00.549 │ NULL             │ false   │
+│ wenetItaly   │      3 │ 2020-10-17 20:14:00.55  │ NULL             │ false   │
+│ wenetItaly   │     34 │ 2020-10-18 21:12:19.403 │ charging_ac      │ true    │
+│ wenetItaly   │     90 │ 2020-10-19 21:13:19.405 │ charging_ac      │ true    │
+```
+
+To get description of the columns
+
+```SQL
+describe 'batterycharge.parquet/*.parquet';
+```
+
+```bash
+┌──────────────┬──────────────┬─────────┬─────────┬─────────┬─────────┐
+│ column_name  │ column_type  │  null   │   key   │ default │  extra  │
+│   varchar    │   varchar    │ varchar │ varchar │ varchar │ varchar │
+├──────────────┼──────────────┼─────────┼─────────┼─────────┼─────────┤
+│ experimentid │ VARCHAR      │ YES     │ NULL    │ NULL    │ NULL    │
+│ userid       │ BIGINT       │ YES     │ NULL    │ NULL    │ NULL    │
+│ timestamp    │ TIMESTAMP_NS │ YES     │ NULL    │ NULL    │ NULL    │
+│ source       │ VARCHAR      │ YES     │ NULL    │ NULL    │ NULL    │
+│ status       │ BOOLEAN      │ YES     │ NULL    │ NULL    │ NULL    │
+└──────────────┴──────────────┴─────────┴─────────┴─────────┴─────────┘
+```
+
+### Desktop applications
+
+- [Tad](https://www.tadviewer.com/), a desktop application to visualize parquet files.
+
+## Code to get started
 
 On this page, we collect valuable resources for processing the datasets of the LivePeople catalog. The page will be updated over time. 
 
-- _Feature engineering_ code is available on [Github](https://github.com/datascientiafoundation/feature-engineering). This code generates a set of features that can be used to train machine learning models.
+- _Feature engineering_ code is available on [Github](https://github.com/datascientiafoundation/feature-engineering). This code generates a set of features that can be used to train machine learning models. Python.

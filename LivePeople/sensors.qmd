@@ -2,6 +2,18 @@
 title: Sensors
 ---
 
+| Connectivity     | Motion          | Position        | Device Usage    | Environment |
+|------------------|-----------------|-----------------|-----------------|-------------|
+| Bluetooth        | Accelerometer   | Location        | Airplane Mode   | Light       |
+| Cellular Network | Gyroscope       | Magnetic field  | Battery Charge  | Pressure    |
+| WiFi             | Activities      | Proximity       | Battery Level   |             |
+| WiFi Networks    | Step Counter    |                 | Doze Mode       |             |
+|                  | Step Detector   |                 | Ring Mode       |   |
+|                  |                 |                 | Touch event     |    |
+|                  |                 |                 | Screen status   |  |
+|                  |                 |                 | User Presence   |             |
+
+
 ## Connectivity
 
 ### Bluetooth
@@ -41,14 +53,45 @@ Returns all WIFI networks detected by the smartphone. Additional features are:
 ### Accelerometer
 Measures the acceleration to which the phone is subjected and captures it as a 3D vector. The unit is $m/s^2$.
 
+```
+┌──────────────┬────────┬───────────────────────┬──────────────────────┬──────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │          x           │          y           │          z           │
+│   varchar    │ int16  │     timestamp_ns      │        double        │        double        │        double        │
+├──────────────┼────────┼───────────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:00.2 │     1.45415800004298 │   -2.613712104840798 │   2.4190319191010725 │
+│ exp01        │      1 │ 2026-03-09 10:30:00   │  -2.7931050152372228 │   2.4771163252614348 │   1.4687690263163504 │
+│ exp01        │      1 │ 2026-03-09 10:40:00.3 │  -0.6880466791087674 │  0.39351417990323423 │  -1.9093307379581015 │
+```
+
 ### Gyroscope
 Measures the rotational forces to which the phone is subjected and it captures it as a 3D vector. The unit is $rad/s$.
+
+```
+┌──────────────┬────────┬───────────────────────┬───────────────────────┬────────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │           x           │           y            │          z           │
+│   varchar    │ int16  │     timestamp_ns      │        double         │         double         │        double        │
+├──────────────┼────────┼───────────────────────┼───────────────────────┼────────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:01.2 │   0.39109085382878783 │     0.7250680896093729 │   0.8235357925012851 │
+│ exp01        │      1 │ 2026-03-09 10:30:01   │   -0.7408988635820171 │    -0.8859916127409736 │   0.6155805765785883 │
+│ exp01        │      1 │ 2026-03-09 10:40:01.3 │   0.07906979146779514 │    -0.8104964949054803 │  -0.5471146849840198 │
+```
 
 ### Activities
 It reports the user's activity recognized by the Google Activity Recognition API. The recognized activities are *in vehicle*, *on bicycle*, *on foot*, *running*, *still*, *tilting*, *walking* and *unknown*. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.
 
+```
+┌──────────────┬────────┬───────────────────────┬────────────┬────────────────────┬───────────┬───────────┬────────┬─────────┬───────┬─────────┬─────────┬─────────┐
+│ experimentid │ userid │       timestamp       │   label    │      accuracy      │ InVehicle │ OnBicycle │ OnFoot │ Running │ Still │ Tilting │ Unknown │ Walking │
+│   varchar    │ int16  │     timestamp_ns      │  varchar   │       double       │   int64   │   int64   │ int64  │  int64  │ int64 │  int64  │  int64  │  int64  │
+├──────────────┼────────┼───────────────────────┼────────────┼────────────────────┼───────────┼───────────┼────────┼─────────┼───────┼─────────┼─────────┼─────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:08.7 │ UNKNOWN    │  90                │        20 │        10 │     32 │      32 │    61 │      48 │      90 │      75 │
+│ exp01        │      1 │ 2026-03-09 10:30:08.5 │ UNKNOWN    │  90                │        13 │         8 │     18 │      35 │   100 │      59 │      90 │      50 │
+│ exp01        │      1 │ 2026-03-09 10:40:08.8 │ UNKNOWN    │  90                │        53 │         7 │      9 │      19 │    44 │      70 │      90 │      59 │
+```
+
 ### Step Counter
 It counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on.
+
 
 ### Step Detector
 An event is triggered each time the user takes a step.
@@ -67,20 +110,35 @@ It provides the geographic coordinates of the phone:
 - *bearing*: horizontal direction of travel and it's the angle with respect to the north that is being faced
 
 ### Magnetic field
+
 Reports the ambient magnetic field along the three sensor axes at the phone location.
 
 ### Proximity
+
 Measures the distance between the user's head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., 'near', 'far').
 
 ### App Usage
 
 ### Headset status
+
 Indicates whether the headphones are connected to the phone.
 
 ### Music Playback
+
 Returns whether music is being played on the phone using the default music player from the operating system. Track information is not collected.
 
+```
+┌──────────────┬────────┬───────────────────────┬─────────┐
+│ experimentid │ userid │       timestamp       │ status  │
+│   varchar    │ int16  │     timestamp_ns      │ boolean │
+├──────────────┼────────┼───────────────────────┼─────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:15.2 │ true    │
+│ exp01        │      1 │ 2026-03-09 10:30:15   │ true    │
+│ exp01        │      1 │ 2026-03-09 10:40:15.3 │ false   │
+```
+
 ### Notifications
+
 It generates an event every time the phone receives a notification and when it is dismissed by the user:
 
 - *identifier*: the unique identifier of notification within the application that generated it  
@@ -89,37 +147,100 @@ It generates an event every time the phone receives a notification and when it i
 - *package*: package name of the application  
 - *status*: whether the notification is posted or dismissed
 
+```
+┌──────────────┬────────┬───────────────────────┬────────────┬─────────────┬───────────┬──────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │ identifier │ isclearable │ isongoing │       package        │        status        │
+│   varchar    │ int16  │     timestamp_ns      │   int64    │   boolean   │  boolean  │       varchar        │       varchar        │
+├──────────────┼────────┼───────────────────────┼────────────┼─────────────┼───────────┼──────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:14.7 │         32 │ false       │ false     │ com.android.calendar │ notification_posted  │
+│ exp01        │      1 │ 2026-03-09 10:30:14.5 │          3 │ true        │ false     │ com.facebook.katana  │ notification_posted  │
+│ exp01        │      1 │ 2026-03-09 10:40:14.8 │         20 │ false       │ false     │ com.facebook.katana  │ notification_posted  │
+```
+
 ### Applications
+
 Reports the name of the application (or application package) currently running in the foreground of the phone.
 
 ## Device Usage
 
 ### Airplane Mode
+
 Returns whether the phone's airplane mode is on or off. When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It's accessible through the quick settings menu on most devices.
 
 ### Battery Charge
+
 Returns whether the phone is on charge:
 
 - *source*: type of power source connected to the device; possible values are USB, AC charge, wireless power source or unknown  
 - *status*: whether the device is being charged
 
 ### Battery Monitoring Log
+
 Returns the phone's battery level:
 
 - *level*: current battery level between 0 and 100  
 - *scale*: maximum level of the battery represented as a value between 0 and 100
 
+```
+┌──────────────┬────────┬───────────────────────┬────────────────┬────────┐
+│ experimentid │ userid │       timestamp       │   level        │ scale  │
+│   varchar    │ int16  │     timestamp_ns      │   double       │ double │
+├──────────────┼────────┼───────────────────────┼────────────────┼────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:10   │  80            │  100.0 │
+│ exp01        │      1 │ 2026-03-10 10:30:10   │  70            │  100.0 │
+│ exp01        │      1 │ 2026-03-11 10:40:10   │  70            │  100.0 │
+```
+
 ### Doze Mode
 Returns whether the phone's doze mode is on or off. Doze mode is a low-power state that a phone enters after a period of inactivity to conserve battery. In this mode, background processes and network access are restricted, allowing only essential tasks, such as high-priority notifications or alarms, to function periodically. This helps significantly reduce battery consumption while the device is idle.
+
+```
+┌──────────────┬────────┬───────────────────────┬─────────┐
+│ experimentid │ userid │       timestamp       │ status  │
+│   varchar    │ int16  │     timestamp_ns      │ boolean │
+├──────────────┼────────┼───────────────────────┼─────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:12.2 │ true    │
+│ exp01        │      1 │ 2026-03-09 10:30:12   │ true    │
+```
 
 ### Ring Mode
 Reports the current ring status of the phone. When set to *normal*, the smartphone rings on incoming calls, messages and notifications by producing audible alerts. Other statuses are *vibrate* (where the phone vibrates instead of ringing) or *silent* (where all sounds are muted). Ring mode is often managed through the device's sound settings.
 
+```
+┌──────────────┬────────┬───────────────────────┬──────────────┐
+│ experimentid │ userid │       timestamp       │    status    │
+│   varchar    │ int16  │     timestamp_ns      │   varchar    │
+├──────────────┼────────┼───────────────────────┼──────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:12.7 │ mode_normal  │
+│ exp01        │      1 │ 2026-03-09 10:30:12.5 │ mode_normal  │
+│ exp01        │      1 │ 2026-03-09 10:40:12.8 │ mode_silent  │
+```
+
 ### Touch event
 It generates an event each time the user touches the screen.
 
+```
+┌──────────────┬────────┬───────────────────────┐
+│ experimentid │ userid │       timestamp       │
+│   varchar    │ int16  │     timestamp_ns      │
+├──────────────┼────────┼───────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:13.7 │
+│ exp01        │      1 │ 2026-03-09 10:30:13.5 │
+│ exp01        │      1 │ 2026-03-09 10:40:13.8 │
+
+```
 ### Screen status
 Returns whether the phone's screen is on or off.
+
+```
+┌──────────────┬────────┬───────────────────────┬────────────┐
+│ experimentid │ userid │       timestamp       │   status   │
+│   varchar    │ int16  │     timestamp_ns      │  varchar   │
+├──────────────┼────────┼───────────────────────┼────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:11.2 │ SCREEN_OFF │
+│ exp01        │      1 │ 2026-03-09 10:30:11   │ SCREEN_ON  │
+│ exp01        │      1 │ 2026-03-09 10:40:11.3 │ SCREEN_ON  │
+```
 
 ### User Presence
 Detects when the user is present near the phone, for example, when the user unlocks the screen.
@@ -128,6 +249,16 @@ Detects when the user is present near the phone, for example, when the user unlo
 
 ### Light
 This component detects ambient light level around the phone, and it is measured in illuminance (lux). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.
+
+```
+┌──────────────┬────────┬───────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │        value         │
+│   varchar    │ int16  │     timestamp_ns      │        double        │
+├──────────────┼────────┼───────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:05.7 │   0.6655922014742972 │
+│ exp01        │      1 │ 2026-03-09 10:30:05.5 │   0.5147111973277914 │
+│ exp01        │      1 │ 2026-03-09 10:40:05.8 │    0.829745144633896 │
+```
 
 ### Pressure
 It measures the ambient air pressure to which the phone is subjected in hPa or mbar.

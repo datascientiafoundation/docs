@@ -2,6 +2,8 @@
 title: Dataset metadata
 ---
 
+The table below lists and describes all the metadata of the LivePeople catalog.
+
 | Field Name       | Description                                        |
 |------------------|----------------------------------------------------|
 | **Project&nbsp;title** | name of the DataScientia project in a natural language as a string |
