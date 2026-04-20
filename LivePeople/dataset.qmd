@@ -2,7 +2,7 @@
 title: Dataset structure
 ---
 
-The folder structure of the downloaded dataset is the following.
+The folder structure of the downloaded dataset is the following. Parquet files can be processed with various [tools](tools.qmd).
 
 ```bash
 .

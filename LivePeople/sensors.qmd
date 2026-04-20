@@ -4,19 +4,21 @@ title: Sensors
 
 | Connectivity     | Motion          | Position        | Device Usage    | Environment |
 |------------------|-----------------|-----------------|-----------------|-------------|
-| Bluetooth        | Accelerometer   | Location        | Airplane Mode   | Light       |
-| Cellular Network | Gyroscope       | Magnetic field  | Battery Charge  | Pressure    |
-| WiFi             | Activities      | Proximity       | Battery Level   |             |
-| WiFi Networks    | Step Counter    |                 | Doze Mode       |             |
-|                  | Step Detector   |                 | Ring Mode       |   |
-|                  |                 |                 | Touch event     |    |
-|                  |                 |                 | Screen status   |  |
-|                  |                 |                 | User Presence   |             |
+| [Bluetooth](sensors.qmd#bluetooth)        | [Accelerometer](sensors.qmd#accelerometer)   | [Location](sensors.qmd#location)        | [Airplane Mode](sensors.qmd#airplane-mode)   | [Light](sensors.qmd#light)       |
+| [Cellular Network](sensors.qmd#cellular-network) | [Gyroscope](sensors.qmd#gyroscope)       | [Magnetic field](sensors.qmd#magnetic-field)  | [Battery Charge](sensors.qmd#battery-charge)  | [Pressure](sensors.qmd#pressure)    |
+| [WiFi](sensors.qmd#wifi-event)             | [Activities](sensors.qmd#activities)      | [Proximity](sensors.qmd#proximity)       | [Battery Level](sensors.qmd#battery-monitoring-log)   |             |
+| [WiFi Networks](sensors.qmd#wifi-networks-event)    | [Step Counter](sensors.qmd#step-counter)    |                 | [Doze Mode](sensors.qmd#doze-mode)       |             |
+|                  | [Step Detector](sensors.qmd#step-detector)   |                 | [Ring Mode](sensors.qmd#ring-mode)       |             |
+|                  |                 |                 | [Touch event](sensors.qmd#touch-event)     |             |
+|                  |                 |                 | [Screen status](sensors.qmd#screen-status)   |             |
+|                  |                 |                 | [User Presence](sensors.qmd#user-presence)   |             |
 
+
+</br>
 
 ## Connectivity
 
-### Bluetooth
+### Bluetooth {#sec-bluetooth}
 List of discovered Bluetooth normal or low energy devices around the smartphone containing the following information:
 
 - *name*: user-friendly name of the remote device  
