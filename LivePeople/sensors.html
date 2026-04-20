@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Sensors – Datascientia Docs</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../LivePeople/tools.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2531583414ccc94f80a280a122b6b11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-da9f827685a3d9b75429b64ba58cca02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -193,7 +195,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../LivePeople/tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data processing tools</span></a>
+ <span class="menu-text">Working with the dataset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,6 +297,82 @@ window.Quarto = {
 </header>
 
 
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Connectivity</th>
+<th>Motion</th>
+<th>Position</th>
+<th>Device Usage</th>
+<th>Environment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bluetooth</td>
+<td>Accelerometer</td>
+<td>Location</td>
+<td>Airplane Mode</td>
+<td>Light</td>
+</tr>
+<tr class="even">
+<td>Cellular Network</td>
+<td>Gyroscope</td>
+<td>Magnetic field</td>
+<td>Battery Charge</td>
+<td>Pressure</td>
+</tr>
+<tr class="odd">
+<td>WiFi</td>
+<td>Activities</td>
+<td>Proximity</td>
+<td>Battery Level</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>WiFi Networks</td>
+<td>Step Counter</td>
+<td></td>
+<td>Doze Mode</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Step Detector</td>
+<td></td>
+<td>Ring Mode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>Touch event</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>Screen status</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>User Presence</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <section id="connectivity" class="level2">
 <h2 class="anchored" data-anchor-id="connectivity">Connectivity</h2>
 <section id="bluetooth" class="level3">
@@ -355,14 +433,35 @@ window.Quarto = {
 <section id="accelerometer" class="level3">
 <h3 class="anchored" data-anchor-id="accelerometer">Accelerometer</h3>
 <p>Measures the acceleration to which the phone is subjected and captures it as a 3D vector. The unit is <span class="math inline">\(m/s^2\)</span>.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬──────────────────────┬──────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │          x           │          y           │          z           │
+│   varchar    │ int16  │     timestamp_ns      │        double        │        double        │        double        │
+├──────────────┼────────┼───────────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:00.2 │     1.45415800004298 │   -2.613712104840798 │   2.4190319191010725 │
+│ exp01        │      1 │ 2026-03-09 10:30:00   │  -2.7931050152372228 │   2.4771163252614348 │   1.4687690263163504 │
+│ exp01        │      1 │ 2026-03-09 10:40:00.3 │  -0.6880466791087674 │  0.39351417990323423 │  -1.9093307379581015 │</code></pre>
 </section>
 <section id="gyroscope" class="level3">
 <h3 class="anchored" data-anchor-id="gyroscope">Gyroscope</h3>
 <p>Measures the rotational forces to which the phone is subjected and it captures it as a 3D vector. The unit is <span class="math inline">\(rad/s\)</span>.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬───────────────────────┬────────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │           x           │           y            │          z           │
+│   varchar    │ int16  │     timestamp_ns      │        double         │         double         │        double        │
+├──────────────┼────────┼───────────────────────┼───────────────────────┼────────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:01.2 │   0.39109085382878783 │     0.7250680896093729 │   0.8235357925012851 │
+│ exp01        │      1 │ 2026-03-09 10:30:01   │   -0.7408988635820171 │    -0.8859916127409736 │   0.6155805765785883 │
+│ exp01        │      1 │ 2026-03-09 10:40:01.3 │   0.07906979146779514 │    -0.8104964949054803 │  -0.5471146849840198 │</code></pre>
 </section>
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
 <p>It reports the user’s activity recognized by the Google Activity Recognition API. The recognized activities are <em>in vehicle</em>, <em>on bicycle</em>, <em>on foot</em>, <em>running</em>, <em>still</em>, <em>tilting</em>, <em>walking</em> and <em>unknown</em>. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬────────────┬────────────────────┬───────────┬───────────┬────────┬─────────┬───────┬─────────┬─────────┬─────────┐
+│ experimentid │ userid │       timestamp       │   label    │      accuracy      │ InVehicle │ OnBicycle │ OnFoot │ Running │ Still │ Tilting │ Unknown │ Walking │
+│   varchar    │ int16  │     timestamp_ns      │  varchar   │       double       │   int64   │   int64   │ int64  │  int64  │ int64 │  int64  │  int64  │  int64  │
+├──────────────┼────────┼───────────────────────┼────────────┼────────────────────┼───────────┼───────────┼────────┼─────────┼───────┼─────────┼─────────┼─────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:08.7 │ UNKNOWN    │  90                │        20 │        10 │     32 │      32 │    61 │      48 │      90 │      75 │
+│ exp01        │      1 │ 2026-03-09 10:30:08.5 │ UNKNOWN    │  90                │        13 │         8 │     18 │      35 │   100 │      59 │      90 │      50 │
+│ exp01        │      1 │ 2026-03-09 10:40:08.8 │ UNKNOWN    │  90                │        53 │         7 │      9 │      19 │    44 │      70 │      90 │      59 │</code></pre>
 </section>
 <section id="step-counter" class="level3">
 <h3 class="anchored" data-anchor-id="step-counter">Step Counter</h3>
@@ -412,6 +511,13 @@ window.Quarto = {
 <section id="music-playback" class="level3">
 <h3 class="anchored" data-anchor-id="music-playback">Music Playback</h3>
 <p>Returns whether music is being played on the phone using the default music player from the operating system. Track information is not collected.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬─────────┐
+│ experimentid │ userid │       timestamp       │ status  │
+│   varchar    │ int16  │     timestamp_ns      │ boolean │
+├──────────────┼────────┼───────────────────────┼─────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:15.2 │ true    │
+│ exp01        │      1 │ 2026-03-09 10:30:15   │ true    │
+│ exp01        │      1 │ 2026-03-09 10:40:15.3 │ false   │</code></pre>
 </section>
 <section id="notifications" class="level3">
 <h3 class="anchored" data-anchor-id="notifications">Notifications</h3>
@@ -427,6 +533,13 @@ window.Quarto = {
 </li>
 <li><em>status</em>: whether the notification is posted or dismissed</li>
 </ul>
+<pre><code>┌──────────────┬────────┬───────────────────────┬────────────┬─────────────┬───────────┬──────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │ identifier │ isclearable │ isongoing │       package        │        status        │
+│   varchar    │ int16  │     timestamp_ns      │   int64    │   boolean   │  boolean  │       varchar        │       varchar        │
+├──────────────┼────────┼───────────────────────┼────────────┼─────────────┼───────────┼──────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:14.7 │         32 │ false       │ false     │ com.android.calendar │ notification_posted  │
+│ exp01        │      1 │ 2026-03-09 10:30:14.5 │          3 │ true        │ false     │ com.facebook.katana  │ notification_posted  │
+│ exp01        │      1 │ 2026-03-09 10:40:14.8 │         20 │ false       │ false     │ com.facebook.katana  │ notification_posted  │</code></pre>
 </section>
 <section id="applications" class="level3">
 <h3 class="anchored" data-anchor-id="applications">Applications</h3>
@@ -456,22 +569,57 @@ window.Quarto = {
 </li>
 <li><em>scale</em>: maximum level of the battery represented as a value between 0 and 100</li>
 </ul>
+<pre><code>┌──────────────┬────────┬───────────────────────┬────────────────┬────────┐
+│ experimentid │ userid │       timestamp       │   level        │ scale  │
+│   varchar    │ int16  │     timestamp_ns      │   double       │ double │
+├──────────────┼────────┼───────────────────────┼────────────────┼────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:10   │  80            │  100.0 │
+│ exp01        │      1 │ 2026-03-10 10:30:10   │  70            │  100.0 │
+│ exp01        │      1 │ 2026-03-11 10:40:10   │  70            │  100.0 │</code></pre>
 </section>
 <section id="doze-mode" class="level3">
 <h3 class="anchored" data-anchor-id="doze-mode">Doze Mode</h3>
 <p>Returns whether the phone’s doze mode is on or off. Doze mode is a low-power state that a phone enters after a period of inactivity to conserve battery. In this mode, background processes and network access are restricted, allowing only essential tasks, such as high-priority notifications or alarms, to function periodically. This helps significantly reduce battery consumption while the device is idle.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬─────────┐
+│ experimentid │ userid │       timestamp       │ status  │
+│   varchar    │ int16  │     timestamp_ns      │ boolean │
+├──────────────┼────────┼───────────────────────┼─────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:12.2 │ true    │
+│ exp01        │      1 │ 2026-03-09 10:30:12   │ true    │</code></pre>
 </section>
 <section id="ring-mode" class="level3">
 <h3 class="anchored" data-anchor-id="ring-mode">Ring Mode</h3>
 <p>Reports the current ring status of the phone. When set to <em>normal</em>, the smartphone rings on incoming calls, messages and notifications by producing audible alerts. Other statuses are <em>vibrate</em> (where the phone vibrates instead of ringing) or <em>silent</em> (where all sounds are muted). Ring mode is often managed through the device’s sound settings.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬──────────────┐
+│ experimentid │ userid │       timestamp       │    status    │
+│   varchar    │ int16  │     timestamp_ns      │   varchar    │
+├──────────────┼────────┼───────────────────────┼──────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:12.7 │ mode_normal  │
+│ exp01        │      1 │ 2026-03-09 10:30:12.5 │ mode_normal  │
+│ exp01        │      1 │ 2026-03-09 10:40:12.8 │ mode_silent  │</code></pre>
 </section>
 <section id="touch-event" class="level3">
 <h3 class="anchored" data-anchor-id="touch-event">Touch event</h3>
 <p>It generates an event each time the user touches the screen.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┐
+│ experimentid │ userid │       timestamp       │
+│   varchar    │ int16  │     timestamp_ns      │
+├──────────────┼────────┼───────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:13.7 │
+│ exp01        │      1 │ 2026-03-09 10:30:13.5 │
+│ exp01        │      1 │ 2026-03-09 10:40:13.8 │
+</code></pre>
 </section>
 <section id="screen-status" class="level3">
 <h3 class="anchored" data-anchor-id="screen-status">Screen status</h3>
 <p>Returns whether the phone’s screen is on or off.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬────────────┐
+│ experimentid │ userid │       timestamp       │   status   │
+│   varchar    │ int16  │     timestamp_ns      │  varchar   │
+├──────────────┼────────┼───────────────────────┼────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:11.2 │ SCREEN_OFF │
+│ exp01        │      1 │ 2026-03-09 10:30:11   │ SCREEN_ON  │
+│ exp01        │      1 │ 2026-03-09 10:40:11.3 │ SCREEN_ON  │</code></pre>
 </section>
 <section id="user-presence" class="level3">
 <h3 class="anchored" data-anchor-id="user-presence">User Presence</h3>
@@ -483,6 +631,13 @@ window.Quarto = {
 <section id="light" class="level3">
 <h3 class="anchored" data-anchor-id="light">Light</h3>
 <p>This component detects ambient light level around the phone, and it is measured in illuminance (lux). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.</p>
+<pre><code>┌──────────────┬────────┬───────────────────────┬──────────────────────┐
+│ experimentid │ userid │       timestamp       │        value         │
+│   varchar    │ int16  │     timestamp_ns      │        double        │
+├──────────────┼────────┼───────────────────────┼──────────────────────┤
+│ exp01        │      1 │ 2026-03-09 10:50:05.7 │   0.6655922014742972 │
+│ exp01        │      1 │ 2026-03-09 10:30:05.5 │   0.5147111973277914 │
+│ exp01        │      1 │ 2026-03-09 10:40:05.8 │    0.829745144633896 │</code></pre>
 </section>
 <section id="pressure" class="level3">
 <h3 class="anchored" data-anchor-id="pressure">Pressure</h3>
@@ -902,8 +1057,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../LivePeople/tools.html" class="pagination-link" aria-label="Data processing tools">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data processing tools</span>
+      <a href="../LivePeople/tools.html" class="pagination-link" aria-label="Working with the dataset">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Working with the dataset</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

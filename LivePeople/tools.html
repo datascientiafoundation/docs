@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data processing tools – Datascientia Docs</title>
+<title>Working with the dataset – Datascientia Docs</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -19,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -34,15 +72,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../LivePeople/metadata.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2531583414ccc94f80a280a122b6b11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-da9f827685a3d9b75429b64ba58cca02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../LivePeople/intro.html">LivePeople</a></li><li class="breadcrumb-item"><a href="../LivePeople/catalog.html">Data catalog</a></li><li class="breadcrumb-item"><a href="../LivePeople/tools.html">Data processing tools</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../LivePeople/intro.html">LivePeople</a></li><li class="breadcrumb-item"><a href="../LivePeople/catalog.html">Data catalog</a></li><li class="breadcrumb-item"><a href="../LivePeople/tools.html">Working with the dataset</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../LivePeople/tools.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data processing tools</span></a>
+ <span class="menu-text">Working with the dataset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -194,15 +231,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#parquet-format" id="toc-parquet-format" class="nav-link active" data-scroll-target="#parquet-format">Parquet format</a>
+  <ul class="collapse">
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">Pandas</a></li>
+  <li><a href="#cli" id="toc-cli" class="nav-link" data-scroll-target="#cli">CLI</a></li>
+  <li><a href="#desktop-applications" id="toc-desktop-applications" class="nav-link" data-scroll-target="#desktop-applications">Desktop applications</a></li>
+  </ul></li>
+  <li><a href="#code-to-get-started" id="toc-code-to-get-started" class="nav-link" data-scroll-target="#code-to-get-started">Code to get started</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../LivePeople/intro.html">LivePeople</a></li><li class="breadcrumb-item"><a href="../LivePeople/catalog.html">Data catalog</a></li><li class="breadcrumb-item"><a href="../LivePeople/tools.html">Data processing tools</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../LivePeople/intro.html">LivePeople</a></li><li class="breadcrumb-item"><a href="../LivePeople/catalog.html">Data catalog</a></li><li class="breadcrumb-item"><a href="../LivePeople/tools.html">Working with the dataset</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Data processing tools</h1>
+<h1 class="title">Working with the dataset</h1>
 </div>
 
 
@@ -219,12 +268,68 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="parquet-format" class="level2">
+<h2 class="anchored" data-anchor-id="parquet-format">Parquet format</h2>
+<p>The format of each file in the datasets is <a href="https://parquet.apache.org/">Apache Parquet</a>, an efficient data storage format that can be opened by most of the existing data processing tools. The format is supported by most of the main data analysis tools. Some suggested tools for processing or viewing the data are reported below.</p>
+<section id="pandas" class="level3">
+<h3 class="anchored" data-anchor-id="pandas">Pandas</h3>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/index.html">pandas</a> is a Python library and supports parquet format. Parquet file can be <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html">read</a> with the following code</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pd.read_parquet(<span class="st">"Sensors/Device-usage/batterycharge.parquet"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       experimentid  userid               timestamp            source  status</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>        wenetItaly      <span class="dv">55</span> <span class="dv">2020</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">17</span> <span class="dv">16</span>:<span class="dv">32</span>:<span class="fl">26.075</span>  charging_unknown    <span class="va">True</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>        wenetItaly       <span class="dv">5</span> <span class="dv">2020</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">17</span> <span class="dv">20</span>:<span class="dv">14</span>:<span class="fl">00.549</span>              <span class="op">&lt;</span>NA<span class="op">&gt;</span>   <span class="va">False</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>        wenetItaly       <span class="dv">3</span> <span class="dv">2020</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">17</span> <span class="dv">20</span>:<span class="dv">14</span>:<span class="fl">00.550</span>              <span class="op">&lt;</span>NA<span class="op">&gt;</span>   <span class="va">False</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>        wenetItaly      <span class="dv">34</span> <span class="dv">2020</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">17</span> <span class="dv">21</span>:<span class="dv">12</span>:<span class="fl">19.403</span>       charging_ac    <span class="va">True</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>        wenetItaly      <span class="dv">90</span> <span class="dv">2020</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">17</span> <span class="dv">21</span>:<span class="dv">13</span>:<span class="fl">19.405</span>       charging_ac    <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cli" class="level3">
+<h3 class="anchored" data-anchor-id="cli">CLI</h3>
+<p><a href="https://duckdb.org/">DuckDB</a>is a in-process database solution (see how to read parquet file on <a href="https://duckdb.org/docs/stable/data/parquet/overview">DuckDB documentation</a>);</p>
+<p>Run this command in the terminal</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, load the dataset</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> <span class="ot">"Sensors/Device-usage/batterycharge.parquet/*.parquet';</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And the result looks like</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">┌──────────────┬────────┬─────────────────────────┬──────────────────┬─────────┐</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> experimentid │ userid │        timestamp        │      source      │ status  │</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   varchar    │ int64  │      timestamp_ns       │     varchar      │ boolean │</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──────────────┼────────┼─────────────────────────┼──────────────────┼─────────┤</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> wenetItaly   │     55 │ 2020-10-15 16:32:26.075 │ charging_unknown │ true    │</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> wenetItaly   │      5 │ 2020-10-16 20:14:00.549 │ NULL             │ false   │</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> wenetItaly   │      3 │ 2020-10-17 20:14:00.55  │ NULL             │ false   │</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> wenetItaly   │     34 │ 2020-10-18 21:12:19.403 │ charging_ac      │ true    │</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> wenetItaly   │     90 │ 2020-10-19 21:13:19.405 │ charging_ac      │ true    │</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To get description of the columns</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>describe <span class="st">'batterycharge.parquet/*.parquet'</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">┌──────────────┬──────────────┬─────────┬─────────┬─────────┬─────────┐</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> column_name  │ column_type  │  null   │   key   │ default │  extra  │</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   varchar    │   varchar    │ varchar │ varchar │ varchar │ varchar │</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──────────────┼──────────────┼─────────┼─────────┼─────────┼─────────┤</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> experimentid │ VARCHAR      │ YES     │ NULL    │ NULL    │ NULL    │</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> userid       │ BIGINT       │ YES     │ NULL    │ NULL    │ NULL    │</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> timestamp    │ TIMESTAMP_NS │ YES     │ NULL    │ NULL    │ NULL    │</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> source       │ VARCHAR      │ YES     │ NULL    │ NULL    │ NULL    │</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span> status       │ BOOLEAN      │ YES     │ NULL    │ NULL    │ NULL    │</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">└──────────────┴──────────────┴─────────┴─────────┴─────────┴─────────┘</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="desktop-applications" class="level3">
+<h3 class="anchored" data-anchor-id="desktop-applications">Desktop applications</h3>
+<ul>
+<li><a href="https://www.tadviewer.com/">Tad</a>, a desktop application to visualize parquet files.</li>
+</ul>
+</section>
+</section>
+<section id="code-to-get-started" class="level2">
+<h2 class="anchored" data-anchor-id="code-to-get-started">Code to get started</h2>
 <p>On this page, we collect valuable resources for processing the datasets of the LivePeople catalog. The page will be updated over time.</p>
 <ul>
-<li><em>Feature engineering</em> code is available on <a href="https://github.com/datascientiafoundation/feature-engineering">Github</a>. This code generates a set of features that can be used to train machine learning models.</li>
+<li><em>Feature engineering</em> code is available on <a href="https://github.com/datascientiafoundation/feature-engineering">Github</a>. This code generates a set of features that can be used to train machine learning models. Python.</li>
 </ul>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
