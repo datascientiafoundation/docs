@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-da9f827685a3d9b75429b64ba58cca02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1959d2598a69cf6026b641a138e1ce0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -448,7 +448,7 @@ window.Quarto = {
 </section>
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
-<p>It reports the user’s activity recognized by the Google Activity Recognition API. The recognized activities are <em>in vehicle</em>, <em>on bicycle</em>, <em>on foot</em>, <em>running</em>, <em>still</em>, <em>tilting</em>, <em>walking</em> and <em>unknown</em>. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.</p>
+<p>It reports the user’s activity recognized by the <a href="https://developers.google.com/location-context/activity-recognition">Google Activity Recognition API</a>. The recognized activities are <em>in vehicle</em>, <em>on bicycle</em>, <em>on foot</em>, <em>running</em>, <em>still</em>, <em>tilting</em>, <em>walking</em> and <em>unknown</em>. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.</p>
 <pre><code>┌──────────────┬────────┬───────────────────────┬────────────┬────────────────────┬───────────┬───────────┬────────┬─────────┬───────┬─────────┬─────────┬─────────┐
 │ experimentid │ userid │       timestamp       │   label    │      accuracy      │ InVehicle │ OnBicycle │ OnFoot │ Running │ Still │ Tilting │ Unknown │ Walking │
 │   varchar    │ int16  │     timestamp_ns      │  varchar   │       double       │   int64   │   int64   │ int64  │  int64  │ int64 │  int64  │  int64  │  int64  │
@@ -459,11 +459,26 @@ window.Quarto = {
 </section>
 <section id="step-counter" class="level3">
 <h3 class="anchored" data-anchor-id="step-counter">Step Counter</h3>
-<p>It counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on.</p>
+<p>It counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on (<a href="https://developer.android.com/reference/android/hardware/Sensor#TYPE_STEP_COUNTER">Android documentation</a>).</p>
+<pre><code>┌──────────────┬────────┬─────────────────────────┬───────┐
+│ experimentid │ userid │        timestamp        │ value │
+│   varchar    │ int64  │      timestamp_ns       │ int64 │
+├──────────────┼────────┼─────────────────────────┼───────┤
+│ exp01        │      0 │ 2026-05-16 08:16:03.079 │ 208   │
+│ exp01        │      0 │ 2026-05-16 08:34:20.132 │ 209   │
+│ exp01        │      0 │ 2026-05-16 09:03:44.196 │ 210   │
+│</code></pre>
 </section>
 <section id="step-detector" class="level3">
 <h3 class="anchored" data-anchor-id="step-detector">Step Detector</h3>
-<p>An event is triggered each time the user takes a step.</p>
+<p>An event is triggered each time the user takes a step <a href="https://developer.android.com/reference/android/hardware/Sensor#TYPE_STEP_DETECTOR">Android Documentation</a>.</p>
+<pre><code>┌──────────────┬────────┬─────────────────────────┐
+│ experimentid │ userid │        timestamp        │
+│   varchar    │ int64  │      timestamp_ns       │
+├──────────────┼────────┼─────────────────────────┤
+│ exp01        │      0 │ 2026-05-17 12:26:03.51  │
+│ exp01        │      0 │ 2026-05-17 12:26:04.505 │
+│ exp01        │      0 │ 2026-05-17 12:26:05.499 │</code></pre>
 </section>
 </section>
 <section id="position" class="level2">
@@ -493,7 +508,7 @@ window.Quarto = {
 </section>
 <section id="proximity" class="level3">
 <h3 class="anchored" data-anchor-id="proximity">Proximity</h3>
-<p>Measures the distance between the user’s head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., ‘near’, ‘far’).</p>
+<p>Measures the distance between the user’s head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., ‘near’, ‘far’), (<a href="https://developer.android.com/develop/sensors-and-location/sensors/sensors_position#sensors-pos-prox">Android Documentation</a>).</p>
 </section>
 <section id="app-usage" class="level3">
 <h3 class="anchored" data-anchor-id="app-usage">App Usage</h3>
@@ -544,16 +559,30 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="device-usage">Device Usage</h2>
 <section id="airplane-mode" class="level3">
 <h3 class="anchored" data-anchor-id="airplane-mode">Airplane Mode</h3>
-<p>Returns whether the phone’s airplane mode is on or off. When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It’s accessible through the quick settings menu on most devices.</p>
+<p>Returns whether the phone’s airplane mode is on or off (<a href="https://developer.android.com/reference/android/content/Intent#ACTION_AIRPLANE_MODE_CHANGED">Android documentation</a>). When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It’s accessible through the quick settings menu on most devices.</p>
+<pre><code>┌──────────────┬────────┬─────────────────────────┬─────────┐
+│ experimentid │ userid │        timestamp        │ status  │
+│   varchar    │ int64  │      timestamp_ns       │ boolean │
+├──────────────┼────────┼─────────────────────────┼─────────┤
+│ exp01        │      1 │ 2020-11-16 09:48:54.039 │ false   │
+│ exp01        │      1 │ 2020-11-22 23:58:26.717 │ true    │
+│ exp01        │      1 │ 2020-11-23 08:17:43.207 │ false   │</code></pre>
 </section>
 <section id="battery-charge" class="level3">
 <h3 class="anchored" data-anchor-id="battery-charge">Battery Charge</h3>
-<p>Returns whether the phone is on charge:</p>
+<p>Returns whether the phone is on charge (<a href="https://developer.android.com/reference/android/os/BatteryManager">Android documentation</a>):</p>
 <ul>
 <li><em>source</em>: type of power source connected to the device; possible values are USB, AC charge, wireless power source or unknown<br>
 </li>
 <li><em>status</em>: whether the device is being charged</li>
 </ul>
+<pre><code>┌──────────────┬────────┬─────────────────────────┬──────────────────┬─────────┐
+│ experimentid │ userid │        timestamp        │      source      │ status  │
+│   varchar    │ int64  │      timestamp_ns       │     varchar      │ boolean │
+├──────────────┼────────┼─────────────────────────┼──────────────────┼─────────┤
+│ exp01        │      0 │ 2026-05-17 17:38:26.075 │ charging_unknown │ true    │
+│ exp01        │      0 │ 2026-05-17 19:15:00.549 │ NULL             │ false   │
+│ exp01        │      0 │ 2026-05-17 20:12:19.403 │ charging_ac      │ true    │</code></pre>
 </section>
 <section id="battery-monitoring-log" class="level3">
 <h3 class="anchored" data-anchor-id="battery-monitoring-log">Battery Monitoring Log</h3>
@@ -624,7 +653,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="environment">Environment</h2>
 <section id="light" class="level3">
 <h3 class="anchored" data-anchor-id="light">Light</h3>
-<p>This component detects ambient light level around the phone, and it is measured in illuminance (lux). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.</p>
+<p>This component detects ambient light level around the phone, and it is measured in illuminance (lux) (<a href="https://developer.android.com/develop/sensors-and-location/sensors/sensors_environment">Android documentation</a>). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.</p>
 <pre><code>┌──────────────┬────────┬───────────────────────┬──────────────────────┐
 │ experimentid │ userid │       timestamp       │        value         │
 │   varchar    │ int16  │     timestamp_ns      │        double        │
