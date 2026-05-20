@@ -79,7 +79,7 @@ Measures the rotational forces to which the phone is subjected and it captures i
 ```
 
 ### Activities
-It reports the user's activity recognized by the Google Activity Recognition API. The recognized activities are *in vehicle*, *on bicycle*, *on foot*, *running*, *still*, *tilting*, *walking* and *unknown*. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.
+It reports the user's activity recognized by the [Google Activity Recognition API](https://developers.google.com/location-context/activity-recognition). The recognized activities are *in vehicle*, *on bicycle*, *on foot*, *running*, *still*, *tilting*, *walking* and *unknown*. The sensor reports a confidence score between 0 and 100, which represents the likelihood that the user is performing the activity.
 
 ```
 ┌──────────────┬────────┬───────────────────────┬────────────┬────────────────────┬───────────┬───────────┬────────┬─────────┬───────┬─────────┬─────────┬─────────┐
@@ -92,11 +92,31 @@ It reports the user's activity recognized by the Google Activity Recognition API
 ```
 
 ### Step Counter
-It counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on.
+It counts the total number of steps performed by the user (while carrying the phone) since the phone was powered on ([Android documentation](https://developer.android.com/reference/android/hardware/Sensor#TYPE_STEP_COUNTER)).
 
+```
+┌──────────────┬────────┬─────────────────────────┬───────┐
+│ experimentid │ userid │        timestamp        │ value │
+│   varchar    │ int64  │      timestamp_ns       │ int64 │
+├──────────────┼────────┼─────────────────────────┼───────┤
+│ exp01        │      0 │ 2026-05-16 08:16:03.079 │ 208   │
+│ exp01        │      0 │ 2026-05-16 08:34:20.132 │ 209   │
+│ exp01        │      0 │ 2026-05-16 09:03:44.196 │ 210   │
+│
+```
 
 ### Step Detector
-An event is triggered each time the user takes a step.
+An event is triggered each time the user takes a step [Android Documentation](https://developer.android.com/reference/android/hardware/Sensor#TYPE_STEP_DETECTOR).
+
+```
+┌──────────────┬────────┬─────────────────────────┐
+│ experimentid │ userid │        timestamp        │
+│   varchar    │ int64  │      timestamp_ns       │
+├──────────────┼────────┼─────────────────────────┤
+│ exp01        │      0 │ 2026-05-17 12:26:03.51  │
+│ exp01        │      0 │ 2026-05-17 12:26:04.505 │
+│ exp01        │      0 │ 2026-05-17 12:26:05.499 │
+```
 
 ## Position
 
@@ -117,7 +137,7 @@ Reports the ambient magnetic field along the three sensor axes at the phone loca
 
 ### Proximity
 
-Measures the distance between the user's head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., 'near', 'far').
+Measures the distance between the user's head and the phone. Depending on the phone, it may be measured in centimeters (i.e., the absolute distance) or as labels (e.g., 'near', 'far'), ([Android Documentation](https://developer.android.com/develop/sensors-and-location/sensors/sensors_position#sensors-pos-prox)).
 
 ### App Usage
 
@@ -167,14 +187,34 @@ Reports the name of the application (or application package) currently running i
 
 ### Airplane Mode
 
-Returns whether the phone's airplane mode is on or off. When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It's accessible through the quick settings menu on most devices.
+Returns whether the phone's airplane mode is on or off ([Android documentation](https://developer.android.com/reference/android/content/Intent#ACTION_AIRPLANE_MODE_CHANGED)). When off, all the connectivity features of the phone are turned off. Airplane mode also conserves battery life by reducing power-consuming background activities. It's accessible through the quick settings menu on most devices.
+
+```
+┌──────────────┬────────┬─────────────────────────┬─────────┐
+│ experimentid │ userid │        timestamp        │ status  │
+│   varchar    │ int64  │      timestamp_ns       │ boolean │
+├──────────────┼────────┼─────────────────────────┼─────────┤
+│ exp01        │      1 │ 2020-11-16 09:48:54.039 │ false   │
+│ exp01        │      1 │ 2020-11-22 23:58:26.717 │ true    │
+│ exp01        │      1 │ 2020-11-23 08:17:43.207 │ false   │
+```
 
 ### Battery Charge
 
-Returns whether the phone is on charge:
+Returns whether the phone is on charge ([Android documentation](https://developer.android.com/reference/android/os/BatteryManager)):
 
 - *source*: type of power source connected to the device; possible values are USB, AC charge, wireless power source or unknown  
 - *status*: whether the device is being charged
+
+```
+┌──────────────┬────────┬─────────────────────────┬──────────────────┬─────────┐
+│ experimentid │ userid │        timestamp        │      source      │ status  │
+│   varchar    │ int64  │      timestamp_ns       │     varchar      │ boolean │
+├──────────────┼────────┼─────────────────────────┼──────────────────┼─────────┤
+│ exp01        │      0 │ 2026-05-17 17:38:26.075 │ charging_unknown │ true    │
+│ exp01        │      0 │ 2026-05-17 19:15:00.549 │ NULL             │ false   │
+│ exp01        │      0 │ 2026-05-17 20:12:19.403 │ charging_ac      │ true    │
+```
 
 ### Battery Monitoring Log
 
@@ -194,6 +234,7 @@ Returns the phone's battery level:
 ```
 
 ### Doze Mode
+
 Returns whether the phone's doze mode is on or off. Doze mode is a low-power state that a phone enters after a period of inactivity to conserve battery. In this mode, background processes and network access are restricted, allowing only essential tasks, such as high-priority notifications or alarms, to function periodically. This helps significantly reduce battery consumption while the device is idle.
 
 ```
@@ -250,7 +291,8 @@ Detects when the user is present near the phone, for example, when the user unlo
 ## Environment
 
 ### Light
-This component detects ambient light level around the phone, and it is measured in illuminance (lux). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.
+
+This component detects ambient light level around the phone, and it is measured in illuminance (lux) ([Android documentation](https://developer.android.com/develop/sensors-and-location/sensors/sensors_environment)). This sensor helps the device adjust the screen brightness automatically, optimizing visibility while conserving battery life. For example, in bright conditions, the screen brightness increases for better readability, whereas in darker environments, it dims to reduce eye strain and save power. Light sensors are commonly located near the top of the device, often beside the front-facing camera.
 
 ```
 ┌──────────────┬────────┬───────────────────────┬──────────────────────┐
