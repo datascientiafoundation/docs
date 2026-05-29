@@ -1,0 +1,8 @@
+---
+title: Data challenges
+---
+
+To promote the exploration of the dataset, multiple workshops and data challenges using DataScientia datasets have been organized. This page highlights current and past events.
+
+- [DiversityOne Open Challenge @ UbiComp/ISWC 2026](https://datascientiafoundation.github.io/diversityone-2026/)
+- [DiversityOne Open Challenge @ UbiComp/ISWC 2025](https://datascientiafoundation.github.io/diversityone-2025/)

@@ -1,0 +1,34 @@
+---
+title: Get started
+---
+
+1.  **Navigate the LivePeople data catalog.** Please look at the available datasets and documentation on the [data catalog](https://livepeople.datascientia.eu/).
+
+2.  **Proposal submission.** Interested researchers submit a data download
+    request through the [web form](https://ds.datascientia.eu/marketplace/welcome) by providing the following information:
+
+    -   Names and contact information of the authors working on the
+        dataset and their institution.
+    -   Description of the research proposal. Provide a description of
+        your idea and how you plan to use the dataset.
+    -   Select from a list the datasets to download. On the data
+        catalog, you can find and navigate the list of downloadable
+        datasets and navigate the codebooks.
+
+    The key requirements to obtain a copy of the data are the affiliation
+    with a research institution, either private or public, the coherence
+    between the requested data and the research proposal, and [the
+    acceptance of the Terms and License Agreement](https://ds.datascientia.eu/marketplace/public/data-access-policy). Key licensing terms include:
+
+    - datasets are used exclusively for research purposes;
+    -  redistribution of the datasets is prohibited;
+    -  datasets cannot be publicly shared (e.g., on a website);
+    -  any attempt to reverse engineer any portion of the data or to
+        re-identify the participants is strictly forbidden and could
+        constitute unlawful processing of personal data.
+
+2.  **Dataset download.** The proposal request is evaluated by the
+    University of Trento (UNITN), and in case of a positive response,
+    the participants receive an email with the instructions for
+    downloading the dataset after a few days. The requested data are
+    shared with the participants through dedicated storage.

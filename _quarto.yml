@@ -16,21 +16,30 @@ website:
     logo: datascientia.png
     collapse-level: 3
     contents:
-      - section: LivePeople
+      - section: LivePeople catalog
         href: LivePeople/intro.qmd
         contents:
-          - section: Data catalog
+          - text: Structure
             href: LivePeople/catalog.qmd
-            contents: 
-            - LivePeople/metadata.qmd
-            - LivePeople/tools.qmd
-            - LivePeople/sensors.qmd
-            - LivePeople/dataset.qmd
-            - LivePeople/faq.qmd
+          - LivePeople/metadata.qmd
+          - text: FAQ
+            href: LivePeople/faq_livepeople.qmd
+      - section: DiversityOne dataset
+        href: LivePeople/papers/diversityone.qmd
+        contents:
+          - LivePeople/get_dataset.qmd
+          - text: Usage examples
+            href: LivePeople/usage_examples.qmd
+          - LivePeople/tools.qmd
+          - LivePeople/sensors.qmd
+          - LivePeople/dataset.qmd
+          - LivePeople/datachallenge.qmd
+          - text: FAQ
+            href: LivePeople/faq_diversityone.qmd
   page-navigation: true
   back-to-top-navigation: true
   page-footer: 
-    left: "© 2025 [DataScientia](https://datascientia.eu/) – All rights reserved"
+    left: "© 2026 [DataScientia](https://datascientia.eu/) – All rights reserved"
     right:
       - icon: linkedin
       - href: https://www.linkedin.com/company/datascientia/

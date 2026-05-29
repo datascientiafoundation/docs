@@ -1,0 +1,42 @@
+---
+title: FAQ
+---
+
+
+The DataScientia team is at your disposal for any questions related to technical aspects, clarifications or possible collaborations. [Contact Us](https://datascientia.disi.unitn.it/contact/).
+
+
+## 1. Data request, download and usage
+
+
+### Can I download the data directly from the data catalog?
+
+No, data are not directly accessible from the data catalog. Each dataset webpage has a link to the request forms. LivePeople catalog provides access to the metadata only.
+
+### How to download the data?
+
+After submitting the form online, if the request is accepted, you will receive an email with instructions on how to access the storage with the requested datasets. Access will be granted for a limited period.
+
+### Can I request the data from multiple data collection projects?
+
+Yes, in the request form, you can request data from multiple projects.
+
+### Can I request all the data of a project?
+
+Yes, Datascientia will evaluate the coherence of the research proposal with the requested datasets.
+
+### What are the eligibility criteria to request the data?
+
+The specific criteria for each dataset are listed in the license. For most of the dataset, the main requirement is to be a researcher affiliated with a research institution, and the usage of the data is restricted to research purposes.
+
+### Can I also use the same data for another project besides the approved one?
+
+No, a new dataset request or an update of the previous project proposal is needed.
+
+### Can I redistribute or transfer the downloaded datasets or their derived datasets to third parties?
+
+The research entity can't, directly or indirectly, sell, license or sub-license, rent or otherwise transfer to third parties the dataset provided by this catalog, nor permit any third party to do so. Specific datasets may have different policies, please look at the use terms and license linked in the metadata in each dataset webpage.
+
+### Can I keep the data after the end of my research project?
+
+No, the research entity that requested the data deletes it at the end date specified in the research proposal. The research entity is asked to notify the elimination.

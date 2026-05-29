@@ -1,8 +1,10 @@
 ---
 title: "Datascientia docs"
 listing:
+  sort: false
   contents:
     - LivePeople/intro.qmd
+    - LivePeople/papers/diversityone.qmd
   type: grid
   id: ds-area-listings
 ---
